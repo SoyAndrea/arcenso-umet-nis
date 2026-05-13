@@ -1,0 +1,28 @@
+/*-- scss:defaults --*/
+
+$theme-white: #FEFEFE;
+$theme-lila: #194998;
+$theme-azul: #4469d7;
+$theme-violeta: #D81E5B;
+$theme-darkvioleta: #020620;
+$theme-green: #5c7c44;
+$theme-otro: #ca8930;
+$theme-blue: #4d82c9;
+$theme-orange:#d0581a;
+
+
+$body-bg: $theme-white;
+$link-color: $theme-darkvioleta;
+$code-color: $theme-violeta;
+$body-color: $theme-darkvioleta;
+$presentation-heading-color: $theme-lila;
+$presentation-heading-font: 'Montserrat', sans-serif;
+$font-family-sans-serif: 'Montserrat', sans-serif;
+
+/* Aplicar globalmente */
+body, .reveal {
+  font-family: 'Montserrat', sans-serif;
+}
+
+$code-block-font-size: 0.7em;
+

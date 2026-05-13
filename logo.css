@@ -1,0 +1,19 @@
+.reveal .slide-logo {
+  display: block;
+  position: fixed;
+  bottom: 10px;         /* Posiciona a 10px del borde inferior */
+  right: 15px;          /* Posiciona a 15px del borde derecho */
+  top: unset !important;  /* Asegura que no se aplique el top */
+  left: unset !important;
+  height: 100px !important;
+  width: 120px !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+
+.reveal .backgrounds .slide-background {
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("assets/9.png");
+  background-size: cover;
+  background-position: center;
+}
