@@ -1,43 +1,36 @@
 /*-- scss:defaults --*/
-/*
 
-$theme-white: #FEFEFE;
-$theme-lila: #194998;
-$theme-azul: #4469d7;
-$theme-violeta: #D81E5B;
-$theme-darkvioleta:  #4469d7;
-$theme-green: #5c7c44;
-$theme-otro: #ca8930;
-$theme-blue: #4d82c9;
-$theme-orange:#d0581a;
+// Colores principales
+$body-bg: #e0e1dd !default;
+$body-color: #23395B !default;
+$link-color: #005f73 !default;
+$input-panel-bg: #ffffff !default;
 
+// Código
+$code-color: #00679e !default;
+$code-block-font-size: 0.7em;
 
-$body-bg: $theme-white;
-$link-color: $theme-darkvioleta;
-$code-color: $theme-violeta;
-$body-color: $theme-lila;
-$presentation-heading-color: $theme-lila;*/
-
-
-/*-- scss:defaults --*/
-
-/*$body-bg: #023047!default; */
-/*$body-bg: #034a6d!default;*/
-$body-bg: #e0e1dd!default;
-$body-color: #23395B!default;
-$link-color: #386641!default;
-$input-panel-bg: #fff !default;
-$code-color: #03045e!default;
-$font-family-sans-serif: Montserrat, Arial!default;
-$code-annotation-higlight-color: #231942 !default;
-
+// Tipografías
+$font-family-sans-serif: 'Montserrat', Arial, sans-serif !default;
 $presentation-heading-font: 'Montserrat', sans-serif;
-$font-family-sans-serif: 'Montserrat', sans-serif;
 
-/* Aplicar globalmente */
-body, .reveal {
+
+/*-- scss:rules --*/
+
+// Aplicar tipografía global
+body,
+.reveal {
   font-family: 'Montserrat', sans-serif;
 }
 
-$code-block-font-size: 0.7em;
+// Estilo de citas
+.reveal blockquote,
+.reveal blockquote p {
+  color: #005f73 !important;
+}
+
+.reveal blockquote {
+  border-left: 4px solid #005f73 !important;
+}
+
 

@@ -77,16 +77,17 @@ from: markdown+emoji
 
 ## Proceso de trabajo en ciencia de datos con `R`
 
-  ![](images/procesor.png){width=80% fig-align="center"}
+
+  ![](images/procesor.png){width=70% fig-align="center"}
 
 ## **`ARcenso`** {.smaller}
 
 
-Es una iniciativa ciudadana que nació de nuestra experiencia profesional con datos censales en el INDEC, motivada por la necesidad de contar con datos accesibles y ordenados, e inspirada en el espíritu colaborativo de la comunidad R. Con el apoyo del Programa de Campeones de rOpenSci (2023–2024), el proyecto es liderado por Andrea Gómez Vargas, junto a Emanuel Ciardullo como co-desarrollador.
+Es una iniciativa ciudadana que nació de nuestra experiencia profesional con datos censales en el INDEC, motivada por la necesidad de contar con datos accesibles y ordenados, e inspirada en el espíritu colaborativo de la comunidad R. Con el apoyo del Programa de Campeones de rOpenSci (2023–2024).
 
 
 
-![](images/SVG Brandpack/icon_lettering_black.svg){width="20%" fig-align="center"} 
+![](images/comunidades.png){width="100%" fig-align="center"} 
 
 
 ## ¿Cuál es la `propuesta`?
@@ -194,16 +195,15 @@ Incluye descripciones detalladas de variables, codificación estandarizada, lice
 ## Funciones
 
 
-- `geo_metadata`: Códigos geográficos
+- `geo_metadata`: Consultar códigos geográficos oficiales
 
-- `census_metadata`:  Catálogo de tablas 
+- `census_metadata`: Explorar el catálogo de tablas censales disponibles
 
-- `check_repository()`: Chequeo de tablas dispónibles por año , ubicación geográfica o temática
+- `check_repository()`: Verificar tablas disponibles según año, ubicación geográfica o temática
 
-- `get_census()`: Obtener tablas
+- `get_census()`: Obtener tablas censales
 
-- `arcenso_app()`: tablero interactivo para consultas
-
+- `arcenso_app()`: Explorar datos mediante un tablero interactivo
 
 
 ## Documentación
@@ -216,13 +216,17 @@ knitr::include_url("https://soyandrea.github.io/arcenso/",height = 600)
 
 ## Manos al código
 
-> [Construyendo indicadores demográficos](https://soyandrea.github.io/arcenso/articles/indicadores_demograficos.html)
+En esta parte del taller vamos a trabajar con datos censales para construir visualizaciones e indicadores demográficos clásicos tomando como base la [**vignette Construyendo indicadores demográficos de ARcenso**](https://soyandrea.github.io/arcenso/articles/indicadores_demograficos.html).
 
-![](https://i.pinimg.com/originals/9f/ff/73/9fff730a3d58f7973f6e2891ee468a2d.gif)
 
-## Instalación de paquetes de trabajo
+<img src="https://i.pinimg.com/originals/9f/ff/73/9fff730a3d58f7973f6e2891ee468a2d.gif" width="60%">
 
+
+## ¿Cómo empezar?
 <br>
+<br>
+
+### Instalación de paquetes de trabajo
 
 
 ```{r}
@@ -241,7 +245,7 @@ install.packages(c("dplyr", "tidyr", "ggplot2", "gt"))
 
 ## Activación de paquetes con `library`
 
-<br>
+
 
 > esto realizo cada vez que use R 
 
@@ -261,18 +265,39 @@ library(gt)       # diseño de tablas
 ```
 
 
-## `arcenso_app()`
+# Acceso a datos censales
 
-> tablero de consulta
+## `check_repository()` - ¿Qué necesitamos? 
+
+
+> Helpers: `geo_metadata` & `census_metadata`
+
+
+```{r}
+check_repository(topic = "estructura", geo_code = "00")
+```
+
+
+## Bonustrack `arcenso_app()` - tablero de consulta
+
+```{r}
+#| eval: false
+#| include: false
+arcenso_app()
+```
+
 
 ![](images/shiny.png){width="120%" fig-align="center"}
 
-## Preparación de los datos
+# Preparación de los datos con `get_census()` & `dplyr`
+
+## Censo 1970
 
 ```{r}
 poblacion_1970 <- get_census(id = "1970_00_estructura_01")
 ```
 
+<br> 
 
 ```{r}
 pob_1970 <- poblacion_1970 |>
@@ -294,6 +319,8 @@ pob_1970 <- poblacion_1970 |>
 ```{r}
 poblacion_1980 <- get_census(id = "1980_00_estructura_03")
 ```
+
+<br> 
 
 
 ```{r}
@@ -331,7 +358,7 @@ pob_1980 <- poblacion_1980 |>
   select(censo, sexo, grupo_edad, poblacion)
 ```
 
-## Estructura de la población
+##Construcción de la base integrada
 
 ```{r}
 poblacion <- bind_rows(pob_1970, pob_1980) |>
@@ -348,7 +375,9 @@ poblacion <- bind_rows(pob_1970, pob_1980) |>
   )
 ```
 
-## 
+## Estructura de la población
+
+A partir de esta base integrada, exploramos algunos cambios en la estructura de la población entre 1970 y 1980 mediante visualizaciones e indicadores demográficos.
 
 ```{r}
 head(poblacion)
@@ -356,6 +385,8 @@ head(poblacion)
 
 
 ## Pirámide poblacional
+
+Calculamos la distribución relativa de la población dentro de cada censo para comparar la estructura poblacional entre 1970 y 1980 independientemente del tamaño total de la población.
 
 ```{r}
 piramide <- poblacion |>
@@ -368,7 +399,7 @@ piramide <- poblacion |>
   ungroup()
 ```
 
-## Gráfico
+## Gráfico comparativo entre censos con `ggplot2`
 
 ```{r}
 # Pirámide comparativa
@@ -383,7 +414,7 @@ piramide_plot <- piramide |>
     breaks = seq(-0.15, 0.15, by = 0.05)) +
   labs(
     title    = "Estructura de la población por sexo y grupo quinquenal de edad",
-    subtitle = "Argentina. Años 1970 y 1980",
+    subtitle = "Total del país. Años 1970 y 1980",
     x        = "Porcentaje",
     y        = "Grupo quinquenal de edad",
     caption  = "Fuente: INDEC, Censo Nacional de Población 1970 y 1980. Procesado con ARcenso.",
@@ -400,7 +431,11 @@ piramide_plot <- piramide |>
 piramide_plot
 ```
 
+# Construcción de indicadores demográficos
+
 ## Índice de envejecimiento
+
+Compara la cantidad de personas mayores (65 años y más) con la población más joven (0 a 14 años). Permite ver de forma simple si la población tiene más peso en las edades jóvenes o en las edades más avanzadas.
 
 ```{r}
 envejecimiento <- poblacion |>
@@ -414,7 +449,7 @@ envejecimiento <- poblacion |>
       round(poblacion_65ymas / poblacion_0a14 * 100, 0))
 ```
 
-## Tabla
+## Tabla comparativa con `gt`
 
 ```{r}
 tabla_envejecimiento  <- gt(envejecimiento) |>
@@ -435,18 +470,24 @@ tabla_envejecimiento  <- gt(envejecimiento) |>
     indice           = "Índice") |>
   tab_source_note(
     source_note = 
-      md("**Fuente:** elaboración propia en base a datos de INDEC (Censos Nacionales de Población 1970 y 1980).")) |>
-  tab_options(
-    table.background.color = "white")
+      md("**Fuente:** elaboración propia en base a datos de INDEC (Censos Nacionales de Población 1970 y 1980)."))
 ```
 
 ## 
+
+<br>
+
+<br>
+
 
 ```{r}
 tabla_envejecimiento 
 ```
 
 ## Índice de feminidad
+
+Este indicador muestra cuántas mujeres hay por cada 100 varones en un grupo especifico de población. En este caso, lo analizamos en edades mayores a 60 años.
+
 
 ```{r}
 feminidad <- poblacion |>
@@ -463,7 +504,8 @@ feminidad <- poblacion |>
 ```
 
 
-## Grafico
+## Grafico comparativo con `ggplot2`
+
 ```{r}
  feminidad_plot <- feminidad |>
   pivot_wider(
@@ -497,6 +539,9 @@ feminidad_plot
 ```
 
 ## Índice de Whipple
+
+Es un indicador clásico utilizado para medir la llamada *atracción de dígitos*.
+ 
 
 ```{r}
 edad_simple_1980 <- get_census(id = "1980_00_estructura_03") |>
@@ -536,10 +581,7 @@ tabla_whipple <- gt(whipple) |>
     indice_whipple  = "Índice") |>
   tab_source_note(
     source_note = 
-      md("**Fuente:** elaboración propia en base a datos de INDEC (Censo Nacional de Población 1980). Escala de referencia: <105 muy preciso, 105–124 aceptable, ≥125 deficiente.")) |>
-  tab_options(
-    table.background.color = "white"
-  )
+      md("**Fuente:** elaboración propia en base a datos de INDEC (Censo Nacional de Población 1980). Escala de referencia: <105 muy preciso, 105–124 aceptable, ≥125 deficiente.")) 
 ```
 
 ##
@@ -549,10 +591,66 @@ tabla_whipple
 ```
 
 
-## Resultado
+
+## Visualización de la información
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+![](outputs/piramide.png)
+
+![](outputs/envejecimiento.png)
+
+:::
+
+::: {.column width="50%"}
+
+![](outputs/feminidad.png)
+
+![](outputs/whipple.png)
+
+:::
+
+:::
+
+## El proceso que trabajamos
+
+<br>
 
   ![](images/procesandor2.png){width=80% fig-align="center"}
 
+
+## ¿Cómo citar?
+
+Si utilizas ARcenso en investigaciones, publicaciones o proyectos, te invitamos a citar el paquete 
+
+```{r}
+citation("arcenso")
+```
+
+## ¿Cómo chequear los resultados?
+
+Verificar la información en la fuente oficial nunca está de más
+
+::: {.columns}
+
+::: {.column width="33%"}
+![](images/resultados1970.png)
+Resultados definitivos por muestra 1970 
+:::
+
+::: {.column width="33%"}
+![](images/resultados1980.png)
+Resultados definitivos 1980
+:::
+
+::: {.column width="33%"}
+![](images/resultados.png)
+Resultados definitivos 2022
+:::
+
+:::
 
 # Preguntas
 
