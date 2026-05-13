@@ -586,6 +586,9 @@ tabla_whipple <- gt(whipple) |>
 
 ##
 
+<br>
+<br>
+
 ```{r}
 tabla_whipple
 ```
