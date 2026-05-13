@@ -637,17 +637,17 @@ Verificar la información en la fuente oficial nunca está de más
 
 ::: {.column width="33%"}
 ![](images/resultados1970.png)
-Resultados definitivos por muestra 1970 
+1970 
 :::
 
 ::: {.column width="33%"}
 ![](images/resultados1980.png)
-Resultados definitivos 1980
+1980
 :::
 
 ::: {.column width="33%"}
 ![](images/resultados.png)
-Resultados definitivos 2022
+2022
 :::
 
 :::
