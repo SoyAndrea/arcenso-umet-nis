@@ -41,14 +41,8 @@ from: markdown+emoji
 - **Individualidad:** registrar datos de cada persona y cada vivienda de manera separada.
 
 
-## Los censos de población del INDEC
 
-> Toda la data de los censos en Argentina está en [censo.gob.ar](https://censo.gob.ar/index.php/historia/)
-
-![](images/censos.png){width="80%" fig-align="center"}
-
-
-## `Importancia de los datos censales`
+## Importancia de los datos censales
 
 ::: {.incremental}
 
@@ -71,10 +65,15 @@ from: markdown+emoji
 
 - Es un software libre y de código abierto, lo que facilita la colaboración y reproducibilidad.
 
-- Existen otros paquetes de datos censales desarrollados en `R` (por ejemplo, `censobr` para Brasil), lo que crea un ecosistema que favorece la interoperabilidad y el aprendizaje compartido.
+- Es un ecosistema que favorece la interoperabilidad y el aprendizaje compartido.
 
 ::: 
 
+## Los censos de población del INDEC
+
+> Toda la información de los censos en Argentina está en [**censo.gob.ar**](https://censo.gob.ar/index.php/historia/)
+
+![Logos censales de 1970 a 2022](images/censos.png){width="80%" fig-align="center"}
 
 ## Proceso de trabajo en ciencia de datos con `R`
 
@@ -83,11 +82,11 @@ from: markdown+emoji
 ## **`ARcenso`** {.smaller}
 
 
-Es una iniciativa ciudadana que nació de nuestra experiencia profesional con datos censales en el INDEC, motivada por la necesidad de contar con datos accesibles y ordenados, e inspirada en el espíritu colaborativo de la comunidad R. Con el apoyo del Programa de Campeonas de rOpenSci (2023–2024), el proyecto es liderado por Andrea Gómez Vargas, junto a Emanuel Ciardullo como co-desarrollador y Luis D. Verde como mentor.
+Es una iniciativa ciudadana que nació de nuestra experiencia profesional con datos censales en el INDEC, motivada por la necesidad de contar con datos accesibles y ordenados, e inspirada en el espíritu colaborativo de la comunidad R. Con el apoyo del Programa de Campeones de rOpenSci (2023–2024), el proyecto es liderado por Andrea Gómez Vargas, junto a Emanuel Ciardullo como co-desarrollador.
 
 
 
-![](images/SVG Brandpack/icon_lettering_black.svg){width="25%" fig-align="center"} 
+![](images/SVG Brandpack/icon_lettering_black.svg){width="20%" fig-align="center"} 
 
 
 ## ¿Cuál es la `propuesta`?
@@ -120,7 +119,7 @@ Es una iniciativa ciudadana que nació de nuestra experiencia profesional con da
 Actualmente los resultados históricos censales de **1970, 1980, 1991, 2001, 2010 y 2022** están disponibles en distintos formatos a través de libros físicos, PDFs, archivos en formato excel o en REDATAM, sin contar con un sistema o formato unificado que permita trabajar con los datos de estos seis periodos censales como base de datos.
 
 
-# Antes de las funciones: `Marco conceptual`
+# `Marco conceptual`
 
 
 ## Principios `FAIR` {.smaller}
@@ -192,46 +191,19 @@ Incluye descripciones detalladas de variables, codificación estandarizada, lice
 # `ARcenso` :package:
 
 
-## ¿Cómo usarlo?
+## Funciones
 
-<br>
 
-### Instalación
+- `geo_metadata`: Códigos geográficos
 
-```{r  eval=FALSE}
-# install.packages("remotes")
-remotes::install_github("SoyAndrea/arcenso")
-```
+- `census_metadata`:  Catálogo de tablas 
 
-<br> <br>
+- `check_repository()`: Chequeo de tablas dispónibles por año , ubicación geográfica o temática
 
-### Activación del paquete
+- `get_census()`: Obtener tablas
 
-```{r}
-library(arcenso)
-```
+- `arcenso_app()`: tablero interactivo para consultas
 
-# Principales funciones
-
- `geo_metadata`
-
-> Codigos geograficos estándar de INDEC 
-
-`check_repository()`
-
-> Chequeo de tablas dispónibles por año o temática censal
-
-`get_census()`
-
-> Obtener tablas por año o temática censal
-
-<br>
-
-## `arcenso_app()`
-
-> tablero de consulta
-
-![](images/shiny.png){width="120%" fig-align="center"}
 
 
 ## Documentación
@@ -244,7 +216,7 @@ knitr::include_url("https://soyandrea.github.io/arcenso/",height = 600)
 
 ## Manos al código
 
-> [Carpeta para descargar scripts de trabajo](https://drive.google.com/drive/folders/1IgGfcNBAMZzf2p83MxH9YJtzyocBx0Pe?usp=sharing)
+> [Construyendo indicadores demográficos](https://soyandrea.github.io/arcenso/articles/indicadores_demograficos.html)
 
 ![](https://i.pinimg.com/originals/9f/ff/73/9fff730a3d58f7973f6e2891ee468a2d.gif)
 
@@ -252,25 +224,20 @@ knitr::include_url("https://soyandrea.github.io/arcenso/",height = 600)
 
 <br>
 
-### `ARcenso`
 
 ```{r}
 #| echo: true
 #| eval: false
+# Si no tenés remotes
 install.packages("remotes")
+
+# Instalar ARcenso desde GitHub
 remotes::install_github("SoyAndrea/arcenso")
-```
 
-<br>
-
-### `tidyverse`
-
-```{r}
-#| echo: true
-#| eval: false
-#| 
+# Instalar paquetes necesarios desde CRAN
 install.packages(c("dplyr", "tidyr", "ggplot2", "gt"))
 ```
+
 
 ## Activación de paquetes con `library`
 
@@ -293,11 +260,21 @@ library(ggplot2)  # diseño de gráficos
 library(gt)       # diseño de tablas
 ```
 
+
+## `arcenso_app()`
+
+> tablero de consulta
+
+![](images/shiny.png){width="120%" fig-align="center"}
+
 ## Preparación de los datos
 
 ```{r}
 poblacion_1970 <- get_census(id = "1970_00_estructura_01")
+```
 
+
+```{r}
 pob_1970 <- poblacion_1970 |>
   filter(sexo != "Total") |>
   mutate(
@@ -316,7 +293,10 @@ pob_1970 <- poblacion_1970 |>
 
 ```{r}
 poblacion_1980 <- get_census(id = "1980_00_estructura_03")
+```
 
+
+```{r}
 pob_1980 <- poblacion_1980 |>
   filter(
     urbano_rural == "Total",
@@ -366,7 +346,11 @@ poblacion <- bind_rows(pob_1970, pob_1980) |>
         "50-54", "55-59", "60-64", "65-69", "70-74",
         "75-79", "80-84", "85 y más"))
   )
+```
 
+## 
+
+```{r}
 head(poblacion)
 ```
 
@@ -384,11 +368,11 @@ piramide <- poblacion |>
   ungroup()
 ```
 
-##
+## Gráfico
 
 ```{r}
 # Pirámide comparativa
-p <- piramide |>
+piramide_plot <- piramide |>
   ggplot(aes(x = poblacion_rel, y = grupo_edad, fill = sexo)) +
   geom_col() +
   facet_wrap(~ censo, ncol = 2) +
@@ -413,7 +397,7 @@ p <- piramide |>
 ##
 
 ```{r}
-p
+piramide_plot
 ```
 
 ## Índice de envejecimiento
@@ -422,43 +406,44 @@ p
 envejecimiento <- poblacion |>
   group_by(censo) |>
   summarise(
-    poblacion_0a14   = sum(poblacion[grupo_edad %in% c("00-04", "05-09", "10-14")]),
-    poblacion_65ymas = sum(poblacion[grupo_edad %in% c("65-69", "70-74", "75-79", "80-84", "85 y más")]),
-    indice = round(poblacion_65ymas / poblacion_0a14 * 100, 0))
+    poblacion_0a14   
+    = sum(poblacion[grupo_edad %in% c("00-04", "05-09", "10-14")]),
+    poblacion_65ymas = 
+      sum(poblacion[grupo_edad %in% c("65-69", "70-74", "75-79", "80-84", "85 y más")]),
+    indice = 
+      round(poblacion_65ymas / poblacion_0a14 * 100, 0))
+```
 
-# Tabla en gt
-t <- gt(envejecimiento) |>
+## Tabla
+
+```{r}
+tabla_envejecimiento  <- gt(envejecimiento) |>
   tab_header(
     title    = "Comparación del índice de envejecimiento",
-    subtitle = "Argentina. Años 1970 y 1980"
-  ) |>
+    subtitle = "Argentina. Años 1970 y 1980") |>
   tab_spanner(
     label   = "Población",
-    columns = c(poblacion_0a14, poblacion_65ymas)
-  ) |>
+    columns = c(poblacion_0a14, poblacion_65ymas) ) |>
   fmt_number(
     columns  = c(poblacion_0a14, poblacion_65ymas),
     decimals = 0,
     sep_mark = ".",
-    dec_mark = ","
-  ) |>
+    dec_mark = "," ) |>
   cols_label(
     poblacion_0a14   = "0 a 14 años",
     poblacion_65ymas = "65 años y más",
-    indice           = "Índice"
-  ) |>
+    indice           = "Índice") |>
   tab_source_note(
     source_note = 
       md("**Fuente:** elaboración propia en base a datos de INDEC (Censos Nacionales de Población 1970 y 1980).")) |>
   tab_options(
-    table.background.color = "white"
-  )
+    table.background.color = "white")
 ```
 
 ## 
 
 ```{r}
-t
+tabla_envejecimiento 
 ```
 
 ## Índice de feminidad
@@ -475,9 +460,12 @@ feminidad <- poblacion |>
     indice_feminidad = round(Mujeres / Varones * 100, 0)
   ) |>
   select(-Varones, -Mujeres)
+```
 
-# Grafico
- f <- feminidad |>
+
+## Grafico
+```{r}
+ feminidad_plot <- feminidad |>
   pivot_wider(
     names_from   = censo,
     values_from  = indice_feminidad,
@@ -505,7 +493,7 @@ feminidad <- poblacion |>
 ## 
 
 ```{r}
-f
+feminidad_plot
 ```
 
 ## Índice de Whipple
@@ -527,9 +515,13 @@ whipple <- edad_simple_1980 |>
     pob_multiplos_5 = sum(poblacion[edad %in% seq(25, 60, by = 5)]),
     pob_total       = sum(poblacion),
     indice_whipple  = round(pob_multiplos_5 / (pob_total / 5) * 100, 1) )
+```
 
-# Tabla en gt
-t2 <- gt(whipple) |>
+
+## Tabla
+
+```{r}
+tabla_whipple <- gt(whipple) |>
   tab_header(
     title    = "Índice de Whipple",
     subtitle = "Argentina. Censo 1980 (población de 23 a 62 años)") |>
@@ -551,9 +543,16 @@ t2 <- gt(whipple) |>
 ```
 
 ##
+
 ```{r}
-t2
+tabla_whipple
 ```
+
+
+## Resultado
+
+  ![](images/procesandor2.png){width=80% fig-align="center"}
+
 
 # Preguntas
 

@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Andrea Gomez Vargas &amp; Emanuel Ciardullo">
   <title>De datos censales a análisis demográficos con ARcenso</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -222,7 +222,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -426,15 +427,8 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 <li><p><strong>Individualidad:</strong> registrar datos de cada persona y cada vivienda de manera separada.</p></li>
 </ul>
 </section>
-<section id="los-censos-de-población-del-indec" class="slide level2">
-<h2>Los censos de población del INDEC</h2>
-<blockquote>
-<p>Toda la data de los censos en Argentina está en <a href="https://censo.gob.ar/index.php/historia/">censo.gob.ar</a></p>
-</blockquote>
-
-<img data-src="images/censos.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="importancia-de-los-datos-censales" class="slide level2">
-<h2><code>Importancia de los datos censales</code></h2>
+<h2>Importancia de los datos censales</h2>
 <div>
 <ul>
 <li class="fragment"><p>Es una herramienta clave para entender las caracteristicas y necesidades de la población.</p></li>
@@ -451,19 +445,26 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 <ul>
 <li class="fragment"><p><code>R</code> es una herramienta orientada al trabajo estadístico y análisis de datos.</p></li>
 <li class="fragment"><p>Es un software libre y de código abierto, lo que facilita la colaboración y reproducibilidad.</p></li>
-<li class="fragment"><p>Existen otros paquetes de datos censales desarrollados en <code>R</code> (por ejemplo, <code>censobr</code> para Brasil), lo que crea un ecosistema que favorece la interoperabilidad y el aprendizaje compartido.</p></li>
+<li class="fragment"><p>Es un ecosistema que favorece la interoperabilidad y el aprendizaje compartido.</p></li>
 </ul>
 </div>
 </section>
+<section id="los-censos-de-población-del-indec" class="slide level2">
+<h2>Los censos de población del INDEC</h2>
+<blockquote>
+<p>Toda la información de los censos en Argentina está en <a href="https://censo.gob.ar/index.php/historia/"><strong>censo.gob.ar</strong></a></p>
+</blockquote>
+
+<img data-src="images/censos.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Logos censales de 1970 a 2022</p></section>
 <section id="proceso-de-trabajo-en-ciencia-de-datos-con-r" class="slide level2">
 <h2>Proceso de trabajo en ciencia de datos con <code>R</code></h2>
 
-<img data-src="images/procesor.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/procesor.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="arcenso" class="slide level2 smaller">
 <h2><strong><code>ARcenso</code></strong></h2>
-<p>Es una iniciativa ciudadana que nació de nuestra experiencia profesional con datos censales en el INDEC, motivada por la necesidad de contar con datos accesibles y ordenados, e inspirada en el espíritu colaborativo de la comunidad R. Con el apoyo del Programa de Campeonas de rOpenSci (2023–2024), el proyecto es liderado por Andrea Gómez Vargas, junto a Emanuel Ciardullo como co-desarrollador y Luis D. Verde como mentor.</p>
+<p>Es una iniciativa ciudadana que nació de nuestra experiencia profesional con datos censales en el INDEC, motivada por la necesidad de contar con datos accesibles y ordenados, e inspirada en el espíritu colaborativo de la comunidad R. Con el apoyo del Programa de Campeones de rOpenSci (2023–2024), el proyecto es liderado por Andrea Gómez Vargas, junto a Emanuel Ciardullo como co-desarrollador.</p>
 
-<img data-src="images/SVG%20Brandpack/icon_lettering_black.svg" style="width:25.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/SVG%20Brandpack/icon_lettering_black.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"></section>
 <section id="cuál-es-la-propuesta" class="slide level2">
 <h2>¿Cuál es la <code>propuesta</code>?</h2>
 <p><br></p>
@@ -489,8 +490,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 <figcaption>tabla ordenada en R</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section></section>
 <section>
 <section id="por-qué" class="title-slide slide level1 center">
@@ -503,8 +503,8 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 <p>Actualmente los resultados históricos censales de <strong>1970, 1980, 1991, 2001, 2010 y 2022</strong> están disponibles en distintos formatos a través de libros físicos, PDFs, archivos en formato excel o en REDATAM, sin contar con un sistema o formato unificado que permita trabajar con los datos de estos seis periodos censales como base de datos.</p>
 </section></section>
 <section>
-<section id="antes-de-las-funciones-marco-conceptual" class="title-slide slide level1 center">
-<h1>Antes de las funciones: <code>Marco conceptual</code></h1>
+<section id="marco-conceptual" class="title-slide slide level1 center">
+<h1><code>Marco conceptual</code></h1>
 
 </section>
 <section id="principios-fair" class="slide level2 smaller">
@@ -538,52 +538,23 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 <p><code>Cobertura Geográfica</code></p>
 <p><strong>Nacional</strong>: Total del país</p>
 <p><strong>Jurisdicciones</strong>: (23 provincias de Argentina y la Ciudad Autónoma de Buenos Aires)</p>
-</div>
-</div>
+</div></div>
 </section></section>
 <section>
 <section id="arcenso-1" class="title-slide slide level1 center">
 <h1><code>ARcenso</code> <span class="emoji" data-emoji="package">📦</span></h1>
 
 </section>
-<section id="cómo-usarlo" class="slide level2">
-<h2>¿Cómo usarlo?</h2>
-<p><br></p>
-<h3 id="instalación">Instalación</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("remotes")</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"SoyAndrea/arcenso"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br> <br></p>
-<h3 id="activación-del-paquete">Activación del paquete</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(arcenso)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section>
-<section>
-<section id="principales-funciones" class="title-slide slide level1 center">
-<h1>Principales funciones</h1>
-<p><code>geo_metadata</code></p>
-<blockquote>
-<p>Codigos geograficos estándar de INDEC</p>
-</blockquote>
-<p><code>check_repository()</code></p>
-<blockquote>
-<p>Chequeo de tablas dispónibles por año o temática censal</p>
-</blockquote>
-<p><code>get_census()</code></p>
-<blockquote>
-<p>Obtener tablas por año o temática censal</p>
-</blockquote>
-<p><br></p>
+<section id="funciones" class="slide level2">
+<h2>Funciones</h2>
+<ul>
+<li><p><code>geo_metadata</code>: Códigos geográficos</p></li>
+<li><p><code>census_metadata</code>: Catálogo de tablas</p></li>
+<li><p><code>check_repository()</code>: Chequeo de tablas dispónibles por año , ubicación geográfica o temática</p></li>
+<li><p><code>get_census()</code>: Obtener tablas</p></li>
+<li><p><code>arcenso_app()</code>: tablero interactivo para consultas</p></li>
+</ul>
 </section>
-<section id="arcenso_app" class="slide level2">
-<h2><code>arcenso_app()</code></h2>
-<blockquote>
-<p>tablero de consulta</p>
-</blockquote>
-
-<img data-src="images/shiny.png" style="width:120.0%" class="r-stretch quarto-figure-center"></section>
 <section id="documentación" class="slide level2">
 <h2>Documentación</h2>
 <div class="cell">
@@ -594,22 +565,22 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 <section id="manos-al-código" class="slide level2">
 <h2>Manos al código</h2>
 <blockquote>
-<p><a href="https://drive.google.com/drive/folders/1IgGfcNBAMZzf2p83MxH9YJtzyocBx0Pe?usp=sharing">Carpeta para descargar scripts de trabajo</a></p>
+<p><a href="https://soyandrea.github.io/arcenso/articles/indicadores_demograficos.html">Construyendo indicadores demográficos</a></p>
 </blockquote>
 
 <img data-src="https://i.pinimg.com/originals/9f/ff/73/9fff730a3d58f7973f6e2891ee468a2d.gif" class="r-stretch"></section>
 <section id="instalación-de-paquetes-de-trabajo" class="slide level2">
 <h2>Instalación de paquetes de trabajo</h2>
 <p><br></p>
-<h3 id="arcenso-2"><code>ARcenso</code></h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"SoyAndrea/arcenso"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
-<h3 id="tidyverse"><code>tidyverse</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"gt"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Si no tenés remotes</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a><span class="co"># Instalar ARcenso desde GitHub</span></span>
+<span id="cb1-5"><a href=""></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"SoyAndrea/arcenso"</span>)</span>
+<span id="cb1-6"><a href=""></a></span>
+<span id="cb1-7"><a href=""></a><span class="co"># Instalar paquetes necesarios desde CRAN</span></span>
+<span id="cb1-8"><a href=""></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"gt"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="activación-de-paquetes-con-library" class="slide level2">
@@ -620,207 +591,220 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 </blockquote>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(arcenso)  <span class="co"># obtención de datos censales</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(dplyr)    <span class="co"># procesamiento de datos</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">library</span>(tidyr)    <span class="co"># orden y transformación de datos</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">library</span>(ggplot2)  <span class="co"># diseño de gráficos</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">library</span>(gt)       <span class="co"># diseño de tablas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(arcenso)  <span class="co"># obtención de datos censales</span></span>
+<span id="cb2-2"><a href=""></a><span class="fu">library</span>(dplyr)    <span class="co"># procesamiento de datos</span></span>
+<span id="cb2-3"><a href=""></a><span class="fu">library</span>(tidyr)    <span class="co"># orden y transformación de datos</span></span>
+<span id="cb2-4"><a href=""></a><span class="fu">library</span>(ggplot2)  <span class="co"># diseño de gráficos</span></span>
+<span id="cb2-5"><a href=""></a><span class="fu">library</span>(gt)       <span class="co"># diseño de tablas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="arcenso_app" class="slide level2">
+<h2><code>arcenso_app()</code></h2>
+<blockquote>
+<p>tablero de consulta</p>
+</blockquote>
+
+<img data-src="images/shiny.png" class="quarto-figure quarto-figure-center r-stretch" style="width:120.0%"></section>
 <section id="preparación-de-los-datos" class="slide level2">
 <h2>Preparación de los datos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>poblacion_1970 <span class="ot">&lt;-</span> <span class="fu">get_census</span>(<span class="at">id =</span> <span class="st">"1970_00_estructura_01"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a>pob_1970 <span class="ot">&lt;-</span> poblacion_1970 <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">filter</span>(sexo <span class="sc">!=</span> <span class="st">"Total"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-6"><a href="#cb6-6"></a>    <span class="at">censo =</span> <span class="dv">1970</span>,</span>
-<span id="cb6-7"><a href="#cb6-7"></a>    <span class="at">grupo_de_edad =</span> <span class="fu">case_when</span>(</span>
-<span id="cb6-8"><a href="#cb6-8"></a>      grupo_de_edad <span class="sc">==</span> <span class="st">"0-4"</span> <span class="sc">~</span> <span class="st">"00-04"</span>,</span>
-<span id="cb6-9"><a href="#cb6-9"></a>      grupo_de_edad <span class="sc">==</span> <span class="st">"5-9"</span> <span class="sc">~</span> <span class="st">"05-09"</span>,</span>
-<span id="cb6-10"><a href="#cb6-10"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> grupo_de_edad</span>
-<span id="cb6-11"><a href="#cb6-11"></a>    )</span>
-<span id="cb6-12"><a href="#cb6-12"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>  <span class="fu">rename</span>(<span class="at">grupo_edad =</span> grupo_de_edad) <span class="sc">|&gt;</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a>  <span class="fu">select</span>(censo, sexo, grupo_edad, poblacion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>poblacion_1970 <span class="ot">&lt;-</span> <span class="fu">get_census</span>(<span class="at">id =</span> <span class="st">"1970_00_estructura_01"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>pob_1970 <span class="ot">&lt;-</span> poblacion_1970 <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href=""></a>  <span class="fu">filter</span>(sexo <span class="sc">!=</span> <span class="st">"Total"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-4"><a href=""></a>    <span class="at">censo =</span> <span class="dv">1970</span>,</span>
+<span id="cb4-5"><a href=""></a>    <span class="at">grupo_de_edad =</span> <span class="fu">case_when</span>(</span>
+<span id="cb4-6"><a href=""></a>      grupo_de_edad <span class="sc">==</span> <span class="st">"0-4"</span> <span class="sc">~</span> <span class="st">"00-04"</span>,</span>
+<span id="cb4-7"><a href=""></a>      grupo_de_edad <span class="sc">==</span> <span class="st">"5-9"</span> <span class="sc">~</span> <span class="st">"05-09"</span>,</span>
+<span id="cb4-8"><a href=""></a>      <span class="cn">TRUE</span> <span class="sc">~</span> grupo_de_edad</span>
+<span id="cb4-9"><a href=""></a>    )</span>
+<span id="cb4-10"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-11"><a href=""></a>  <span class="fu">rename</span>(<span class="at">grupo_edad =</span> grupo_de_edad) <span class="sc">|&gt;</span></span>
+<span id="cb4-12"><a href=""></a>  <span class="fu">select</span>(censo, sexo, grupo_edad, poblacion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="censo-1980" class="slide level2">
 <h2>Censo 1980</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>poblacion_1980 <span class="ot">&lt;-</span> <span class="fu">get_census</span>(<span class="at">id =</span> <span class="st">"1980_00_estructura_03"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a>pob_1980 <span class="ot">&lt;-</span> poblacion_1980 <span class="sc">|&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">filter</span>(</span>
-<span id="cb7-5"><a href="#cb7-5"></a>    urbano_rural <span class="sc">==</span> <span class="st">"Total"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    sexo <span class="sc">!=</span> <span class="st">"Total"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    edad <span class="sc">!=</span> <span class="st">"Total"</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-10"><a href="#cb7-10"></a>    <span class="at">censo =</span> <span class="dv">1980</span>,</span>
-<span id="cb7-11"><a href="#cb7-11"></a>    <span class="at">edad_num =</span> <span class="fu">ifelse</span>(edad <span class="sc">==</span> <span class="st">"85 y más"</span>, <span class="dv">85</span>, <span class="fu">as.numeric</span>(edad)),</span>
-<span id="cb7-12"><a href="#cb7-12"></a>    <span class="at">grupo_edad =</span> <span class="fu">case_when</span>(</span>
-<span id="cb7-13"><a href="#cb7-13"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>)   <span class="sc">~</span> <span class="st">"00-04"</span>,</span>
-<span id="cb7-14"><a href="#cb7-14"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>)   <span class="sc">~</span> <span class="st">"05-09"</span>,</span>
-<span id="cb7-15"><a href="#cb7-15"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">14</span>) <span class="sc">~</span> <span class="st">"10-14"</span>,</span>
-<span id="cb7-16"><a href="#cb7-16"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">15</span><span class="sc">:</span><span class="dv">19</span>) <span class="sc">~</span> <span class="st">"15-19"</span>,</span>
-<span id="cb7-17"><a href="#cb7-17"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">24</span>) <span class="sc">~</span> <span class="st">"20-24"</span>,</span>
-<span id="cb7-18"><a href="#cb7-18"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">25</span><span class="sc">:</span><span class="dv">29</span>) <span class="sc">~</span> <span class="st">"25-29"</span>,</span>
-<span id="cb7-19"><a href="#cb7-19"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">34</span>) <span class="sc">~</span> <span class="st">"30-34"</span>,</span>
-<span id="cb7-20"><a href="#cb7-20"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span><span class="sc">:</span><span class="dv">39</span>) <span class="sc">~</span> <span class="st">"35-39"</span>,</span>
-<span id="cb7-21"><a href="#cb7-21"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">40</span><span class="sc">:</span><span class="dv">44</span>) <span class="sc">~</span> <span class="st">"40-44"</span>,</span>
-<span id="cb7-22"><a href="#cb7-22"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">45</span><span class="sc">:</span><span class="dv">49</span>) <span class="sc">~</span> <span class="st">"45-49"</span>,</span>
-<span id="cb7-23"><a href="#cb7-23"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">54</span>) <span class="sc">~</span> <span class="st">"50-54"</span>,</span>
-<span id="cb7-24"><a href="#cb7-24"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">55</span><span class="sc">:</span><span class="dv">59</span>) <span class="sc">~</span> <span class="st">"55-59"</span>,</span>
-<span id="cb7-25"><a href="#cb7-25"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">60</span><span class="sc">:</span><span class="dv">64</span>) <span class="sc">~</span> <span class="st">"60-64"</span>,</span>
-<span id="cb7-26"><a href="#cb7-26"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">65</span><span class="sc">:</span><span class="dv">69</span>) <span class="sc">~</span> <span class="st">"65-69"</span>,</span>
-<span id="cb7-27"><a href="#cb7-27"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">70</span><span class="sc">:</span><span class="dv">74</span>) <span class="sc">~</span> <span class="st">"70-74"</span>,</span>
-<span id="cb7-28"><a href="#cb7-28"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">75</span><span class="sc">:</span><span class="dv">79</span>) <span class="sc">~</span> <span class="st">"75-79"</span>,</span>
-<span id="cb7-29"><a href="#cb7-29"></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">84</span>) <span class="sc">~</span> <span class="st">"80-84"</span>,</span>
-<span id="cb7-30"><a href="#cb7-30"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"85 y más"</span></span>
-<span id="cb7-31"><a href="#cb7-31"></a>    )</span>
-<span id="cb7-32"><a href="#cb7-32"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-33"><a href="#cb7-33"></a>  <span class="fu">select</span>(<span class="sc">-</span>edad, <span class="sc">-</span>urbano_rural, <span class="sc">-</span>edad_num) <span class="sc">|&gt;</span></span>
-<span id="cb7-34"><a href="#cb7-34"></a>  <span class="fu">select</span>(censo, sexo, grupo_edad, poblacion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>poblacion_1980 <span class="ot">&lt;-</span> <span class="fu">get_census</span>(<span class="at">id =</span> <span class="st">"1980_00_estructura_03"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>pob_1980 <span class="ot">&lt;-</span> poblacion_1980 <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href=""></a>  <span class="fu">filter</span>(</span>
+<span id="cb6-3"><a href=""></a>    urbano_rural <span class="sc">==</span> <span class="st">"Total"</span>,</span>
+<span id="cb6-4"><a href=""></a>    sexo <span class="sc">!=</span> <span class="st">"Total"</span>,</span>
+<span id="cb6-5"><a href=""></a>    edad <span class="sc">!=</span> <span class="st">"Total"</span></span>
+<span id="cb6-6"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-7"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-8"><a href=""></a>    <span class="at">censo =</span> <span class="dv">1980</span>,</span>
+<span id="cb6-9"><a href=""></a>    <span class="at">edad_num =</span> <span class="fu">ifelse</span>(edad <span class="sc">==</span> <span class="st">"85 y más"</span>, <span class="dv">85</span>, <span class="fu">as.numeric</span>(edad)),</span>
+<span id="cb6-10"><a href=""></a>    <span class="at">grupo_edad =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-11"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>)   <span class="sc">~</span> <span class="st">"00-04"</span>,</span>
+<span id="cb6-12"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>)   <span class="sc">~</span> <span class="st">"05-09"</span>,</span>
+<span id="cb6-13"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">14</span>) <span class="sc">~</span> <span class="st">"10-14"</span>,</span>
+<span id="cb6-14"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">15</span><span class="sc">:</span><span class="dv">19</span>) <span class="sc">~</span> <span class="st">"15-19"</span>,</span>
+<span id="cb6-15"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">24</span>) <span class="sc">~</span> <span class="st">"20-24"</span>,</span>
+<span id="cb6-16"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">25</span><span class="sc">:</span><span class="dv">29</span>) <span class="sc">~</span> <span class="st">"25-29"</span>,</span>
+<span id="cb6-17"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">34</span>) <span class="sc">~</span> <span class="st">"30-34"</span>,</span>
+<span id="cb6-18"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span><span class="sc">:</span><span class="dv">39</span>) <span class="sc">~</span> <span class="st">"35-39"</span>,</span>
+<span id="cb6-19"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">40</span><span class="sc">:</span><span class="dv">44</span>) <span class="sc">~</span> <span class="st">"40-44"</span>,</span>
+<span id="cb6-20"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">45</span><span class="sc">:</span><span class="dv">49</span>) <span class="sc">~</span> <span class="st">"45-49"</span>,</span>
+<span id="cb6-21"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">54</span>) <span class="sc">~</span> <span class="st">"50-54"</span>,</span>
+<span id="cb6-22"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">55</span><span class="sc">:</span><span class="dv">59</span>) <span class="sc">~</span> <span class="st">"55-59"</span>,</span>
+<span id="cb6-23"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">60</span><span class="sc">:</span><span class="dv">64</span>) <span class="sc">~</span> <span class="st">"60-64"</span>,</span>
+<span id="cb6-24"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">65</span><span class="sc">:</span><span class="dv">69</span>) <span class="sc">~</span> <span class="st">"65-69"</span>,</span>
+<span id="cb6-25"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">70</span><span class="sc">:</span><span class="dv">74</span>) <span class="sc">~</span> <span class="st">"70-74"</span>,</span>
+<span id="cb6-26"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">75</span><span class="sc">:</span><span class="dv">79</span>) <span class="sc">~</span> <span class="st">"75-79"</span>,</span>
+<span id="cb6-27"><a href=""></a>      edad_num <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">84</span>) <span class="sc">~</span> <span class="st">"80-84"</span>,</span>
+<span id="cb6-28"><a href=""></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"85 y más"</span></span>
+<span id="cb6-29"><a href=""></a>    )</span>
+<span id="cb6-30"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-31"><a href=""></a>  <span class="fu">select</span>(<span class="sc">-</span>edad, <span class="sc">-</span>urbano_rural, <span class="sc">-</span>edad_num) <span class="sc">|&gt;</span></span>
+<span id="cb6-32"><a href=""></a>  <span class="fu">select</span>(censo, sexo, grupo_edad, poblacion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="estructura-de-la-población" class="slide level2">
 <h2>Estructura de la población</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>poblacion <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(pob_1970, pob_1980) <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb8-3"><a href="#cb8-3"></a>    <span class="at">poblacion =</span> <span class="fu">as.numeric</span>(poblacion),</span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="at">sexo =</span> <span class="fu">factor</span>(sexo, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Varones"</span>, <span class="st">"Mujeres"</span>)),</span>
-<span id="cb8-5"><a href="#cb8-5"></a>    <span class="at">grupo_edad =</span> <span class="fu">factor</span>(</span>
-<span id="cb8-6"><a href="#cb8-6"></a>      grupo_edad,</span>
-<span id="cb8-7"><a href="#cb8-7"></a>      <span class="at">levels =</span> <span class="fu">c</span>(</span>
-<span id="cb8-8"><a href="#cb8-8"></a>        <span class="st">"00-04"</span>, <span class="st">"05-09"</span>, <span class="st">"10-14"</span>, <span class="st">"15-19"</span>, <span class="st">"20-24"</span>,</span>
-<span id="cb8-9"><a href="#cb8-9"></a>        <span class="st">"25-29"</span>, <span class="st">"30-34"</span>, <span class="st">"35-39"</span>, <span class="st">"40-44"</span>, <span class="st">"45-49"</span>,</span>
-<span id="cb8-10"><a href="#cb8-10"></a>        <span class="st">"50-54"</span>, <span class="st">"55-59"</span>, <span class="st">"60-64"</span>, <span class="st">"65-69"</span>, <span class="st">"70-74"</span>,</span>
-<span id="cb8-11"><a href="#cb8-11"></a>        <span class="st">"75-79"</span>, <span class="st">"80-84"</span>, <span class="st">"85 y más"</span>))</span>
-<span id="cb8-12"><a href="#cb8-12"></a>  )</span>
-<span id="cb8-13"><a href="#cb8-13"></a></span>
-<span id="cb8-14"><a href="#cb8-14"></a><span class="fu">head</span>(poblacion)</span>
-<span id="cb8-15"><a href="#cb8-15"></a><span class="co">#&gt; # A tibble: 6 x 4</span></span>
-<span id="cb8-16"><a href="#cb8-16"></a><span class="co">#&gt;   censo sexo    grupo_edad poblacion</span></span>
-<span id="cb8-17"><a href="#cb8-17"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;          &lt;dbl&gt;</span></span>
-<span id="cb8-18"><a href="#cb8-18"></a><span class="co">#&gt; 1  1970 Varones 00-04        1196950</span></span>
-<span id="cb8-19"><a href="#cb8-19"></a><span class="co">#&gt; 2  1970 Mujeres 00-04        1158350</span></span>
-<span id="cb8-20"><a href="#cb8-20"></a><span class="co">#&gt; 3  1970 Varones 05-09        1163050</span></span>
-<span id="cb8-21"><a href="#cb8-21"></a><span class="co">#&gt; 4  1970 Mujeres 05-09        1133950</span></span>
-<span id="cb8-22"><a href="#cb8-22"></a><span class="co">#&gt; 5  1970 Varones 10-14        1114300</span></span>
-<span id="cb8-23"><a href="#cb8-23"></a><span class="co">#&gt; 6  1970 Mujeres 10-14        1086850</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="pirámide-poblacional" class="slide level2">
-<h2>Pirámide poblacional</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>piramide <span class="ot">&lt;-</span> poblacion <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(censo, sexo) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb9-4"><a href="#cb9-4"></a>    <span class="at">poblacion_rel =</span> <span class="fu">if_else</span>(</span>
-<span id="cb9-5"><a href="#cb9-5"></a>      sexo <span class="sc">==</span> <span class="st">"Varones"</span>,</span>
-<span id="cb9-6"><a href="#cb9-6"></a>      <span class="sc">-</span>poblacion <span class="sc">/</span> <span class="fu">sum</span>(poblacion),</span>
-<span id="cb9-7"><a href="#cb9-7"></a>       poblacion <span class="sc">/</span> <span class="fu">sum</span>(poblacion))) <span class="sc">|&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>poblacion <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(pob_1970, pob_1980) <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a href=""></a>    <span class="at">poblacion =</span> <span class="fu">as.numeric</span>(poblacion),</span>
+<span id="cb7-4"><a href=""></a>    <span class="at">sexo =</span> <span class="fu">factor</span>(sexo, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Varones"</span>, <span class="st">"Mujeres"</span>)),</span>
+<span id="cb7-5"><a href=""></a>    <span class="at">grupo_edad =</span> <span class="fu">factor</span>(</span>
+<span id="cb7-6"><a href=""></a>      grupo_edad,</span>
+<span id="cb7-7"><a href=""></a>      <span class="at">levels =</span> <span class="fu">c</span>(</span>
+<span id="cb7-8"><a href=""></a>        <span class="st">"00-04"</span>, <span class="st">"05-09"</span>, <span class="st">"10-14"</span>, <span class="st">"15-19"</span>, <span class="st">"20-24"</span>,</span>
+<span id="cb7-9"><a href=""></a>        <span class="st">"25-29"</span>, <span class="st">"30-34"</span>, <span class="st">"35-39"</span>, <span class="st">"40-44"</span>, <span class="st">"45-49"</span>,</span>
+<span id="cb7-10"><a href=""></a>        <span class="st">"50-54"</span>, <span class="st">"55-59"</span>, <span class="st">"60-64"</span>, <span class="st">"65-69"</span>, <span class="st">"70-74"</span>,</span>
+<span id="cb7-11"><a href=""></a>        <span class="st">"75-79"</span>, <span class="st">"80-84"</span>, <span class="st">"85 y más"</span>))</span>
+<span id="cb7-12"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Pirámide comparativa</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>p <span class="ot">&lt;-</span> piramide <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> poblacion_rel, <span class="at">y =</span> grupo_edad, <span class="at">fill =</span> sexo)) <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> censo, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#00f59b"</span>, <span class="st">"#7014f2"</span>)) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb10-8"><a href="#cb10-8"></a>    <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="fu">abs</span>(<span class="fu">round</span>(x <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)), <span class="st">"%"</span>),</span>
-<span id="cb10-9"><a href="#cb10-9"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.15</span>, <span class="fl">0.15</span>),</span>
-<span id="cb10-10"><a href="#cb10-10"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.15</span>, <span class="fl">0.15</span>, <span class="at">by =</span> <span class="fl">0.05</span>)) <span class="sc">+</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-12"><a href="#cb10-12"></a>    <span class="at">title    =</span> <span class="st">"Estructura de la población por sexo y grupo quinquenal de edad"</span>,</span>
-<span id="cb10-13"><a href="#cb10-13"></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Años 1970 y 1980"</span>,</span>
-<span id="cb10-14"><a href="#cb10-14"></a>    <span class="at">x        =</span> <span class="st">"Porcentaje"</span>,</span>
-<span id="cb10-15"><a href="#cb10-15"></a>    <span class="at">y        =</span> <span class="st">"Grupo quinquenal de edad"</span>,</span>
-<span id="cb10-16"><a href="#cb10-16"></a>    <span class="at">caption  =</span> <span class="st">"Fuente: INDEC, Censo Nacional de Población 1970 y 1980. Procesado con ARcenso."</span>,</span>
-<span id="cb10-17"><a href="#cb10-17"></a>    <span class="at">fill     =</span> <span class="st">"Sexo"</span>) <span class="sc">+</span></span>
-<span id="cb10-18"><a href="#cb10-18"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb10-19"><a href="#cb10-19"></a>  <span class="fu">theme</span>(</span>
-<span id="cb10-20"><a href="#cb10-20"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb10-21"><a href="#cb10-21"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">head</span>(poblacion)</span>
+<span id="cb8-2"><a href=""></a><span class="co">#&gt; # A tibble: 6 × 4</span></span>
+<span id="cb8-3"><a href=""></a><span class="co">#&gt;   censo sexo    grupo_edad poblacion</span></span>
+<span id="cb8-4"><a href=""></a><span class="co">#&gt;   &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;          &lt;dbl&gt;</span></span>
+<span id="cb8-5"><a href=""></a><span class="co">#&gt; 1  1970 Varones 00-04        1196950</span></span>
+<span id="cb8-6"><a href=""></a><span class="co">#&gt; 2  1970 Mujeres 00-04        1158350</span></span>
+<span id="cb8-7"><a href=""></a><span class="co">#&gt; 3  1970 Varones 05-09        1163050</span></span>
+<span id="cb8-8"><a href=""></a><span class="co">#&gt; 4  1970 Mujeres 05-09        1133950</span></span>
+<span id="cb8-9"><a href=""></a><span class="co">#&gt; 5  1970 Varones 10-14        1114300</span></span>
+<span id="cb8-10"><a href=""></a><span class="co">#&gt; 6  1970 Mujeres 10-14        1086850</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pirámide-poblacional" class="slide level2">
+<h2>Pirámide poblacional</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>piramide <span class="ot">&lt;-</span> poblacion <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href=""></a>  <span class="fu">group_by</span>(censo, sexo) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-4"><a href=""></a>    <span class="at">poblacion_rel =</span> <span class="fu">if_else</span>(</span>
+<span id="cb9-5"><a href=""></a>      sexo <span class="sc">==</span> <span class="st">"Varones"</span>,</span>
+<span id="cb9-6"><a href=""></a>      <span class="sc">-</span>poblacion <span class="sc">/</span> <span class="fu">sum</span>(poblacion),</span>
+<span id="cb9-7"><a href=""></a>       poblacion <span class="sc">/</span> <span class="fu">sum</span>(poblacion))) <span class="sc">|&gt;</span></span>
+<span id="cb9-8"><a href=""></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="gráfico" class="slide level2">
+<h2>Gráfico</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># Pirámide comparativa</span></span>
+<span id="cb10-2"><a href=""></a>piramide_plot <span class="ot">&lt;-</span> piramide <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> poblacion_rel, <span class="at">y =</span> grupo_edad, <span class="at">fill =</span> sexo)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href=""></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb10-5"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> censo, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href=""></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#00f59b"</span>, <span class="st">"#7014f2"</span>)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href=""></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb10-8"><a href=""></a>    <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="fu">abs</span>(<span class="fu">round</span>(x <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)), <span class="st">"%"</span>),</span>
+<span id="cb10-9"><a href=""></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.15</span>, <span class="fl">0.15</span>),</span>
+<span id="cb10-10"><a href=""></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.15</span>, <span class="fl">0.15</span>, <span class="at">by =</span> <span class="fl">0.05</span>)) <span class="sc">+</span></span>
+<span id="cb10-11"><a href=""></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-12"><a href=""></a>    <span class="at">title    =</span> <span class="st">"Estructura de la población por sexo y grupo quinquenal de edad"</span>,</span>
+<span id="cb10-13"><a href=""></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Años 1970 y 1980"</span>,</span>
+<span id="cb10-14"><a href=""></a>    <span class="at">x        =</span> <span class="st">"Porcentaje"</span>,</span>
+<span id="cb10-15"><a href=""></a>    <span class="at">y        =</span> <span class="st">"Grupo quinquenal de edad"</span>,</span>
+<span id="cb10-16"><a href=""></a>    <span class="at">caption  =</span> <span class="st">"Fuente: INDEC, Censo Nacional de Población 1970 y 1980. Procesado con ARcenso."</span>,</span>
+<span id="cb10-17"><a href=""></a>    <span class="at">fill     =</span> <span class="st">"Sexo"</span>) <span class="sc">+</span></span>
+<span id="cb10-18"><a href=""></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb10-19"><a href=""></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-20"><a href=""></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb10-21"><a href=""></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>piramide_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="figures/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
 <section id="índice-de-envejecimiento" class="slide level2">
 <h2>Índice de envejecimiento</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>envejecimiento <span class="ot">&lt;-</span> poblacion <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">group_by</span>(censo) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb12-4"><a href="#cb12-4"></a>    <span class="at">poblacion_0a14   =</span> <span class="fu">sum</span>(poblacion[grupo_edad <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"00-04"</span>, <span class="st">"05-09"</span>, <span class="st">"10-14"</span>)]),</span>
-<span id="cb12-5"><a href="#cb12-5"></a>    <span class="at">poblacion_65ymas =</span> <span class="fu">sum</span>(poblacion[grupo_edad <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"65-69"</span>, <span class="st">"70-74"</span>, <span class="st">"75-79"</span>, <span class="st">"80-84"</span>, <span class="st">"85 y más"</span>)]),</span>
-<span id="cb12-6"><a href="#cb12-6"></a>    <span class="at">indice =</span> <span class="fu">round</span>(poblacion_65ymas <span class="sc">/</span> poblacion_0a14 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">0</span>))</span>
-<span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Tabla en gt</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a>t <span class="ot">&lt;-</span> <span class="fu">gt</span>(envejecimiento) <span class="sc">|&gt;</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb12-11"><a href="#cb12-11"></a>    <span class="at">title    =</span> <span class="st">"Comparación del índice de envejecimiento"</span>,</span>
-<span id="cb12-12"><a href="#cb12-12"></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Años 1970 y 1980"</span></span>
-<span id="cb12-13"><a href="#cb12-13"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb12-14"><a href="#cb12-14"></a>  <span class="fu">tab_spanner</span>(</span>
-<span id="cb12-15"><a href="#cb12-15"></a>    <span class="at">label   =</span> <span class="st">"Población"</span>,</span>
-<span id="cb12-16"><a href="#cb12-16"></a>    <span class="at">columns =</span> <span class="fu">c</span>(poblacion_0a14, poblacion_65ymas)</span>
-<span id="cb12-17"><a href="#cb12-17"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb12-18"><a href="#cb12-18"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb12-19"><a href="#cb12-19"></a>    <span class="at">columns  =</span> <span class="fu">c</span>(poblacion_0a14, poblacion_65ymas),</span>
-<span id="cb12-20"><a href="#cb12-20"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
-<span id="cb12-21"><a href="#cb12-21"></a>    <span class="at">sep_mark =</span> <span class="st">"."</span>,</span>
-<span id="cb12-22"><a href="#cb12-22"></a>    <span class="at">dec_mark =</span> <span class="st">","</span></span>
-<span id="cb12-23"><a href="#cb12-23"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb12-24"><a href="#cb12-24"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb12-25"><a href="#cb12-25"></a>    <span class="at">poblacion_0a14   =</span> <span class="st">"0 a 14 años"</span>,</span>
-<span id="cb12-26"><a href="#cb12-26"></a>    <span class="at">poblacion_65ymas =</span> <span class="st">"65 años y más"</span>,</span>
-<span id="cb12-27"><a href="#cb12-27"></a>    <span class="at">indice           =</span> <span class="st">"Índice"</span></span>
-<span id="cb12-28"><a href="#cb12-28"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb12-29"><a href="#cb12-29"></a>  <span class="fu">tab_source_note</span>(</span>
-<span id="cb12-30"><a href="#cb12-30"></a>    <span class="at">source_note =</span> </span>
-<span id="cb12-31"><a href="#cb12-31"></a>      <span class="fu">md</span>(<span class="st">"**Fuente:** elaboración propia en base a datos de INDEC (Censos Nacionales de Población 1970 y 1980)."</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb12-32"><a href="#cb12-32"></a>  <span class="fu">tab_options</span>(</span>
-<span id="cb12-33"><a href="#cb12-33"></a>    <span class="at">table.background.color =</span> <span class="st">"white"</span></span>
-<span id="cb12-34"><a href="#cb12-34"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>envejecimiento <span class="ot">&lt;-</span> poblacion <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href=""></a>  <span class="fu">group_by</span>(censo) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href=""></a>  <span class="fu">summarise</span>(</span>
+<span id="cb12-4"><a href=""></a>    poblacion_0a14   </span>
+<span id="cb12-5"><a href=""></a>    <span class="ot">=</span> <span class="fu">sum</span>(poblacion[grupo_edad <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"00-04"</span>, <span class="st">"05-09"</span>, <span class="st">"10-14"</span>)]),</span>
+<span id="cb12-6"><a href=""></a>    <span class="at">poblacion_65ymas =</span> </span>
+<span id="cb12-7"><a href=""></a>      <span class="fu">sum</span>(poblacion[grupo_edad <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"65-69"</span>, <span class="st">"70-74"</span>, <span class="st">"75-79"</span>, <span class="st">"80-84"</span>, <span class="st">"85 y más"</span>)]),</span>
+<span id="cb12-8"><a href=""></a>    <span class="at">indice =</span> </span>
+<span id="cb12-9"><a href=""></a>      <span class="fu">round</span>(poblacion_65ymas <span class="sc">/</span> poblacion_0a14 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tabla" class="slide level2">
+<h2>Tabla</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>tabla_envejecimiento  <span class="ot">&lt;-</span> <span class="fu">gt</span>(envejecimiento) <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href=""></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb13-3"><a href=""></a>    <span class="at">title    =</span> <span class="st">"Comparación del índice de envejecimiento"</span>,</span>
+<span id="cb13-4"><a href=""></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Años 1970 y 1980"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href=""></a>  <span class="fu">tab_spanner</span>(</span>
+<span id="cb13-6"><a href=""></a>    <span class="at">label   =</span> <span class="st">"Población"</span>,</span>
+<span id="cb13-7"><a href=""></a>    <span class="at">columns =</span> <span class="fu">c</span>(poblacion_0a14, poblacion_65ymas) ) <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a href=""></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb13-9"><a href=""></a>    <span class="at">columns  =</span> <span class="fu">c</span>(poblacion_0a14, poblacion_65ymas),</span>
+<span id="cb13-10"><a href=""></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
+<span id="cb13-11"><a href=""></a>    <span class="at">sep_mark =</span> <span class="st">"."</span>,</span>
+<span id="cb13-12"><a href=""></a>    <span class="at">dec_mark =</span> <span class="st">","</span> ) <span class="sc">|&gt;</span></span>
+<span id="cb13-13"><a href=""></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb13-14"><a href=""></a>    <span class="at">poblacion_0a14   =</span> <span class="st">"0 a 14 años"</span>,</span>
+<span id="cb13-15"><a href=""></a>    <span class="at">poblacion_65ymas =</span> <span class="st">"65 años y más"</span>,</span>
+<span id="cb13-16"><a href=""></a>    <span class="at">indice           =</span> <span class="st">"Índice"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-17"><a href=""></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb13-18"><a href=""></a>    <span class="at">source_note =</span> </span>
+<span id="cb13-19"><a href=""></a>      <span class="fu">md</span>(<span class="st">"**Fuente:** elaboración propia en base a datos de INDEC (Censos Nacionales de Población 1970 y 1980)."</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-20"><a href=""></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb13-21"><a href=""></a>    <span class="at">table.background.color =</span> <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>tabla_envejecimiento </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<div id="iraksvqufz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iraksvqufz table {
+<div id="ybytnwtrrd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ybytnwtrrd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iraksvqufz thead, #iraksvqufz tbody, #iraksvqufz tfoot, #iraksvqufz tr, #iraksvqufz td, #iraksvqufz th {
+#ybytnwtrrd thead, #ybytnwtrrd tbody, #ybytnwtrrd tfoot, #ybytnwtrrd tr, #ybytnwtrrd td, #ybytnwtrrd th {
   border-style: none;
 }
 
-#iraksvqufz p {
+#ybytnwtrrd p {
   margin: 0;
   padding: 0;
 }
 
-#iraksvqufz .gt_table {
+#ybytnwtrrd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -846,12 +830,12 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-left-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_caption {
+#ybytnwtrrd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iraksvqufz .gt_title {
+#ybytnwtrrd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -863,7 +847,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-width: 0;
 }
 
-#iraksvqufz .gt_subtitle {
+#ybytnwtrrd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -875,7 +859,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-top-width: 0;
 }
 
-#iraksvqufz .gt_heading {
+#ybytnwtrrd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -887,13 +871,13 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_bottom_border {
+#ybytnwtrrd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_col_headings {
+#ybytnwtrrd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -908,7 +892,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_col_heading {
+#ybytnwtrrd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -928,7 +912,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   overflow-x: hidden;
 }
 
-#iraksvqufz .gt_column_spanner_outer {
+#ybytnwtrrd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -940,15 +924,15 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 4px;
 }
 
-#iraksvqufz .gt_column_spanner_outer:first-child {
+#ybytnwtrrd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iraksvqufz .gt_column_spanner_outer:last-child {
+#ybytnwtrrd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iraksvqufz .gt_column_spanner {
+#ybytnwtrrd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -960,11 +944,11 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   width: 100%;
 }
 
-#iraksvqufz .gt_spanner_row {
+#ybytnwtrrd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iraksvqufz .gt_group_heading {
+#ybytnwtrrd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -990,7 +974,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   text-align: left;
 }
 
-#iraksvqufz .gt_empty_group_heading {
+#ybytnwtrrd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1005,15 +989,15 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   vertical-align: middle;
 }
 
-#iraksvqufz .gt_from_md > :first-child {
+#ybytnwtrrd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iraksvqufz .gt_from_md > :last-child {
+#ybytnwtrrd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iraksvqufz .gt_row {
+#ybytnwtrrd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1032,7 +1016,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   overflow-x: hidden;
 }
 
-#iraksvqufz .gt_stub {
+#ybytnwtrrd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1045,7 +1029,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#iraksvqufz .gt_stub_row_group {
+#ybytnwtrrd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1059,15 +1043,15 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   vertical-align: top;
 }
 
-#iraksvqufz .gt_row_group_first td {
+#ybytnwtrrd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iraksvqufz .gt_row_group_first th {
+#ybytnwtrrd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iraksvqufz .gt_summary_row {
+#ybytnwtrrd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1077,16 +1061,16 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#iraksvqufz .gt_first_summary_row {
+#ybytnwtrrd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_first_summary_row.thick {
+#ybytnwtrrd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iraksvqufz .gt_last_summary_row {
+#ybytnwtrrd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1096,7 +1080,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_grand_summary_row {
+#ybytnwtrrd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1106,7 +1090,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#iraksvqufz .gt_first_grand_summary_row {
+#ybytnwtrrd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1116,7 +1100,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-top-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_last_grand_summary_row_top {
+#ybytnwtrrd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1126,11 +1110,11 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_striped {
+#ybytnwtrrd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iraksvqufz .gt_table_body {
+#ybytnwtrrd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1139,7 +1123,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_footnotes {
+#ybytnwtrrd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1153,7 +1137,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_footnote {
+#ybytnwtrrd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1162,7 +1146,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#iraksvqufz .gt_sourcenotes {
+#ybytnwtrrd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1176,7 +1160,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#iraksvqufz .gt_sourcenote {
+#ybytnwtrrd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1184,103 +1168,123 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#iraksvqufz .gt_left {
+#ybytnwtrrd .gt_left {
   text-align: left;
 }
 
-#iraksvqufz .gt_center {
+#ybytnwtrrd .gt_center {
   text-align: center;
 }
 
-#iraksvqufz .gt_right {
+#ybytnwtrrd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iraksvqufz .gt_font_normal {
+#ybytnwtrrd .gt_font_normal {
   font-weight: normal;
 }
 
-#iraksvqufz .gt_font_bold {
+#ybytnwtrrd .gt_font_bold {
   font-weight: bold;
 }
 
-#iraksvqufz .gt_font_italic {
+#ybytnwtrrd .gt_font_italic {
   font-style: italic;
 }
 
-#iraksvqufz .gt_super {
+#ybytnwtrrd .gt_super {
   font-size: 65%;
 }
 
-#iraksvqufz .gt_footnote_marks {
+#ybytnwtrrd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iraksvqufz .gt_asterisk {
+#ybytnwtrrd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iraksvqufz .gt_indent_1 {
+#ybytnwtrrd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iraksvqufz .gt_indent_2 {
+#ybytnwtrrd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iraksvqufz .gt_indent_3 {
+#ybytnwtrrd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iraksvqufz .gt_indent_4 {
+#ybytnwtrrd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iraksvqufz .gt_indent_5 {
+#ybytnwtrrd .gt_indent_5 {
   text-indent: 25px;
 }
+
+#ybytnwtrrd .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ybytnwtrrd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="">Comparación del índice de envejecimiento</td>
-    </tr>
-    <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Argentina. Años 1970 y 1980</td>
-    </tr>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="censo">censo</th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Población">
-        <span class="gt_column_spanner">Población</span>
-      </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="Índice">Índice</th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="0 a 14 años">0 a 14 años</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="65 años y más">65 años y más</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="censo" class="gt_row gt_right">1970</td>
-<td headers="poblacion_0a14" class="gt_row gt_right">6.853.450</td>
-<td headers="poblacion_65ymas" class="gt_row gt_right">1.631.400</td>
-<td headers="indice" class="gt_row gt_right">24</td></tr>
-    <tr><td headers="censo" class="gt_row gt_right">1980</td>
-<td headers="poblacion_0a14" class="gt_row gt_right">8.480.768</td>
-<td headers="poblacion_65ymas" class="gt_row gt_right">2.290.564</td>
-<td headers="indice" class="gt_row gt_right">27</td></tr>
-  </tbody>
-  <tfoot class="gt_sourcenotes">
-    <tr>
-      <td class="gt_sourcenote" colspan="4"><strong>Fuente:</strong> elaboración propia en base a datos de INDEC (Censos Nacionales de Población 1970 y 1980).</td>
-    </tr>
-  </tfoot>
-  
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header gt_heading">
+<th colspan="4" class="gt_heading gt_title gt_font_normal">Comparación del índice de envejecimiento</th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Argentina. Años 1970 y 1980</th>
+</tr>
+<tr class="header gt_col_headings gt_spanner_row">
+<th rowspan="2" id="censo" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">censo</th>
+<th colspan="2" id="Población" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Población
+</div></th>
+<th rowspan="2" id="indice" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Índice</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="poblacion_0a14" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">0 a 14 años</th>
+<th id="poblacion_65ymas" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">65 años y más</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="censo">1970</td>
+<td class="gt_row gt_right" headers="poblacion_0a14">6.853.450</td>
+<td class="gt_row gt_right" headers="poblacion_65ymas">1.631.400</td>
+<td class="gt_row gt_right" headers="indice">24</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="censo">1980</td>
+<td class="gt_row gt_right" headers="poblacion_0a14">8.480.768</td>
+<td class="gt_row gt_right" headers="poblacion_65ymas">2.290.564</td>
+<td class="gt_row gt_right" headers="indice">27</td>
+</tr>
+</tbody><tfoot>
+<tr class="even gt_sourcenotes">
+<td colspan="4" class="gt_sourcenote"><strong>Fuente:</strong> elaboración propia en base a datos de INDEC (Censos Nacionales de Población 1970 y 1980).</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
 </div>
@@ -1288,116 +1292,121 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 <section id="índice-de-feminidad" class="slide level2">
 <h2>Índice de feminidad</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>feminidad <span class="ot">&lt;-</span> poblacion <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">filter</span>(</span>
-<span id="cb14-3"><a href="#cb14-3"></a>    grupo_edad <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"60-64"</span>, <span class="st">"65-69"</span>, <span class="st">"70-74"</span>, <span class="st">"75-79"</span>, <span class="st">"80-84"</span>, <span class="st">"85 y más"</span>)</span>
-<span id="cb14-4"><a href="#cb14-4"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">group_by</span>(censo, grupo_edad, sexo) <span class="sc">|&gt;</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">summarise</span>(<span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-7"><a href="#cb14-7"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sexo, <span class="at">values_from =</span> poblacion) <span class="sc">|&gt;</span></span>
-<span id="cb14-8"><a href="#cb14-8"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb14-9"><a href="#cb14-9"></a>    <span class="at">indice_feminidad =</span> <span class="fu">round</span>(Mujeres <span class="sc">/</span> Varones <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">0</span>)</span>
-<span id="cb14-10"><a href="#cb14-10"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-11"><a href="#cb14-11"></a>  <span class="fu">select</span>(<span class="sc">-</span>Varones, <span class="sc">-</span>Mujeres)</span>
-<span id="cb14-12"><a href="#cb14-12"></a></span>
-<span id="cb14-13"><a href="#cb14-13"></a><span class="co"># Grafico</span></span>
-<span id="cb14-14"><a href="#cb14-14"></a> f <span class="ot">&lt;-</span> feminidad <span class="sc">|&gt;</span></span>
-<span id="cb14-15"><a href="#cb14-15"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb14-16"><a href="#cb14-16"></a>    <span class="at">names_from   =</span> censo,</span>
-<span id="cb14-17"><a href="#cb14-17"></a>    <span class="at">values_from  =</span> indice_feminidad,</span>
-<span id="cb14-18"><a href="#cb14-18"></a>    <span class="at">names_prefix =</span> <span class="st">"censo_"</span></span>
-<span id="cb14-19"><a href="#cb14-19"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-20"><a href="#cb14-20"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> grupo_edad)) <span class="sc">+</span></span>
-<span id="cb14-21"><a href="#cb14-21"></a>  <span class="fu">geom_segment</span>(</span>
-<span id="cb14-22"><a href="#cb14-22"></a>    <span class="fu">aes</span>(<span class="at">x =</span> censo_1970, <span class="at">xend =</span> censo_1980, <span class="at">yend =</span> grupo_edad),</span>
-<span id="cb14-23"><a href="#cb14-23"></a>    <span class="at">color =</span> <span class="st">"grey85"</span>,</span>
-<span id="cb14-24"><a href="#cb14-24"></a>    <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb14-25"><a href="#cb14-25"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1970), <span class="at">color =</span> <span class="st">"#ff0f7b"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb14-26"><a href="#cb14-26"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1980), <span class="at">color =</span> <span class="st">"#f89b29"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb14-27"><a href="#cb14-27"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1970, <span class="at">label =</span> censo_1970), <span class="at">hjust =</span> <span class="fl">1.4</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb14-28"><a href="#cb14-28"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1980, <span class="at">label =</span> censo_1980), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb14-29"><a href="#cb14-29"></a>  <span class="fu">labs</span>(</span>
-<span id="cb14-30"><a href="#cb14-30"></a>    <span class="at">x        =</span> <span class="st">"Mujeres por cada 100 varones"</span>,</span>
-<span id="cb14-31"><a href="#cb14-31"></a>    <span class="at">y        =</span> <span class="st">"Grupo de edad"</span>,</span>
-<span id="cb14-32"><a href="#cb14-32"></a>    <span class="at">title    =</span> <span class="st">"Cambio en el índice de feminidad de la población de 60 años y más"</span>,</span>
-<span id="cb14-33"><a href="#cb14-33"></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Años 1970 y 1980"</span>,</span>
-<span id="cb14-34"><a href="#cb14-34"></a>    <span class="at">caption  =</span> <span class="st">"Fuente: INDEC, Censo Nacional de Población 1970 y 1980. Procesado con ARcenso."</span></span>
-<span id="cb14-35"><a href="#cb14-35"></a>  ) <span class="sc">+</span></span>
-<span id="cb14-36"><a href="#cb14-36"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>feminidad <span class="ot">&lt;-</span> poblacion <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href=""></a>  <span class="fu">filter</span>(</span>
+<span id="cb15-3"><a href=""></a>    grupo_edad <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"60-64"</span>, <span class="st">"65-69"</span>, <span class="st">"70-74"</span>, <span class="st">"75-79"</span>, <span class="st">"80-84"</span>, <span class="st">"85 y más"</span>)</span>
+<span id="cb15-4"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-5"><a href=""></a>  <span class="fu">group_by</span>(censo, grupo_edad, sexo) <span class="sc">|&gt;</span></span>
+<span id="cb15-6"><a href=""></a>  <span class="fu">summarise</span>(<span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-7"><a href=""></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sexo, <span class="at">values_from =</span> poblacion) <span class="sc">|&gt;</span></span>
+<span id="cb15-8"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-9"><a href=""></a>    <span class="at">indice_feminidad =</span> <span class="fu">round</span>(Mujeres <span class="sc">/</span> Varones <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">0</span>)</span>
+<span id="cb15-10"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-11"><a href=""></a>  <span class="fu">select</span>(<span class="sc">-</span>Varones, <span class="sc">-</span>Mujeres)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="grafico" class="slide level2">
+<h2>Grafico</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a> feminidad_plot <span class="ot">&lt;-</span> feminidad <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href=""></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb16-3"><a href=""></a>    <span class="at">names_from   =</span> censo,</span>
+<span id="cb16-4"><a href=""></a>    <span class="at">values_from  =</span> indice_feminidad,</span>
+<span id="cb16-5"><a href=""></a>    <span class="at">names_prefix =</span> <span class="st">"censo_"</span></span>
+<span id="cb16-6"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb16-7"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> grupo_edad)) <span class="sc">+</span></span>
+<span id="cb16-8"><a href=""></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb16-9"><a href=""></a>    <span class="fu">aes</span>(<span class="at">x =</span> censo_1970, <span class="at">xend =</span> censo_1980, <span class="at">yend =</span> grupo_edad),</span>
+<span id="cb16-10"><a href=""></a>    <span class="at">color =</span> <span class="st">"grey85"</span>,</span>
+<span id="cb16-11"><a href=""></a>    <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb16-12"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1970), <span class="at">color =</span> <span class="st">"#ff0f7b"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb16-13"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1980), <span class="at">color =</span> <span class="st">"#f89b29"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb16-14"><a href=""></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1970, <span class="at">label =</span> censo_1970), <span class="at">hjust =</span> <span class="fl">1.4</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb16-15"><a href=""></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> censo_1980, <span class="at">label =</span> censo_1980), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb16-16"><a href=""></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-17"><a href=""></a>    <span class="at">x        =</span> <span class="st">"Mujeres por cada 100 varones"</span>,</span>
+<span id="cb16-18"><a href=""></a>    <span class="at">y        =</span> <span class="st">"Grupo de edad"</span>,</span>
+<span id="cb16-19"><a href=""></a>    <span class="at">title    =</span> <span class="st">"Cambio en el índice de feminidad de la población de 60 años y más"</span>,</span>
+<span id="cb16-20"><a href=""></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Años 1970 y 1980"</span>,</span>
+<span id="cb16-21"><a href=""></a>    <span class="at">caption  =</span> <span class="st">"Fuente: INDEC, Censo Nacional de Población 1970 y 1980. Procesado con ARcenso."</span></span>
+<span id="cb16-22"><a href=""></a>  ) <span class="sc">+</span></span>
+<span id="cb16-23"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-4" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>f</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>feminidad_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="figures/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
+<img data-src="figures/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
 <section id="índice-de-whipple" class="slide level2">
 <h2>Índice de Whipple</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>edad_simple_1980 <span class="ot">&lt;-</span> <span class="fu">get_census</span>(<span class="at">id =</span> <span class="st">"1980_00_estructura_03"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">filter</span>(</span>
-<span id="cb16-3"><a href="#cb16-3"></a>    urbano_rural <span class="sc">==</span> <span class="st">"Total"</span>,</span>
-<span id="cb16-4"><a href="#cb16-4"></a>    sexo <span class="sc">==</span> <span class="st">"Total"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5"></a>    edad <span class="sc">!=</span> <span class="st">"Total"</span>,</span>
-<span id="cb16-6"><a href="#cb16-6"></a>    edad <span class="sc">!=</span> <span class="st">"85 y más"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-8"><a href="#cb16-8"></a>    <span class="at">edad =</span> <span class="fu">as.numeric</span>(edad),</span>
-<span id="cb16-9"><a href="#cb16-9"></a>    <span class="at">poblacion =</span> <span class="fu">as.numeric</span>(poblacion))</span>
-<span id="cb16-10"><a href="#cb16-10"></a></span>
-<span id="cb16-11"><a href="#cb16-11"></a>whipple <span class="ot">&lt;-</span> edad_simple_1980 <span class="sc">|&gt;</span></span>
-<span id="cb16-12"><a href="#cb16-12"></a>  <span class="fu">filter</span>(edad <span class="sc">&gt;=</span> <span class="dv">23</span>, edad <span class="sc">&lt;=</span> <span class="dv">62</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-13"><a href="#cb16-13"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb16-14"><a href="#cb16-14"></a>    <span class="at">pob_multiplos_5 =</span> <span class="fu">sum</span>(poblacion[edad <span class="sc">%in%</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">60</span>, <span class="at">by =</span> <span class="dv">5</span>)]),</span>
-<span id="cb16-15"><a href="#cb16-15"></a>    <span class="at">pob_total       =</span> <span class="fu">sum</span>(poblacion),</span>
-<span id="cb16-16"><a href="#cb16-16"></a>    <span class="at">indice_whipple  =</span> <span class="fu">round</span>(pob_multiplos_5 <span class="sc">/</span> (pob_total <span class="sc">/</span> <span class="dv">5</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>) )</span>
-<span id="cb16-17"><a href="#cb16-17"></a></span>
-<span id="cb16-18"><a href="#cb16-18"></a><span class="co"># Tabla en gt</span></span>
-<span id="cb16-19"><a href="#cb16-19"></a>t2 <span class="ot">&lt;-</span> <span class="fu">gt</span>(whipple) <span class="sc">|&gt;</span></span>
-<span id="cb16-20"><a href="#cb16-20"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb16-21"><a href="#cb16-21"></a>    <span class="at">title    =</span> <span class="st">"Índice de Whipple"</span>,</span>
-<span id="cb16-22"><a href="#cb16-22"></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Censo 1980 (población de 23 a 62 años)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-23"><a href="#cb16-23"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb16-24"><a href="#cb16-24"></a>    <span class="at">columns  =</span> <span class="fu">c</span>(pob_multiplos_5, pob_total),</span>
-<span id="cb16-25"><a href="#cb16-25"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
-<span id="cb16-26"><a href="#cb16-26"></a>    <span class="at">sep_mark =</span> <span class="st">"."</span>,</span>
-<span id="cb16-27"><a href="#cb16-27"></a>    <span class="at">dec_mark =</span> <span class="st">","</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-28"><a href="#cb16-28"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb16-29"><a href="#cb16-29"></a>    <span class="at">pob_multiplos_5 =</span> <span class="st">"Población en edades múltiplo de 5"</span>,</span>
-<span id="cb16-30"><a href="#cb16-30"></a>    <span class="at">pob_total       =</span> <span class="st">"Población total (23 a 62 años)"</span>,</span>
-<span id="cb16-31"><a href="#cb16-31"></a>    <span class="at">indice_whipple  =</span> <span class="st">"Índice"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-32"><a href="#cb16-32"></a>  <span class="fu">tab_source_note</span>(</span>
-<span id="cb16-33"><a href="#cb16-33"></a>    <span class="at">source_note =</span> </span>
-<span id="cb16-34"><a href="#cb16-34"></a>      <span class="fu">md</span>(<span class="st">"**Fuente:** elaboración propia en base a datos de INDEC (Censo Nacional de Población 1980). Escala de referencia: &lt;105 muy preciso, 105–124 aceptable, ≥125 deficiente."</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb16-35"><a href="#cb16-35"></a>  <span class="fu">tab_options</span>(</span>
-<span id="cb16-36"><a href="#cb16-36"></a>    <span class="at">table.background.color =</span> <span class="st">"white"</span></span>
-<span id="cb16-37"><a href="#cb16-37"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>edad_simple_1980 <span class="ot">&lt;-</span> <span class="fu">get_census</span>(<span class="at">id =</span> <span class="st">"1980_00_estructura_03"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href=""></a>  <span class="fu">filter</span>(</span>
+<span id="cb18-3"><a href=""></a>    urbano_rural <span class="sc">==</span> <span class="st">"Total"</span>,</span>
+<span id="cb18-4"><a href=""></a>    sexo <span class="sc">==</span> <span class="st">"Total"</span>,</span>
+<span id="cb18-5"><a href=""></a>    edad <span class="sc">!=</span> <span class="st">"Total"</span>,</span>
+<span id="cb18-6"><a href=""></a>    edad <span class="sc">!=</span> <span class="st">"85 y más"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-7"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb18-8"><a href=""></a>    <span class="at">edad =</span> <span class="fu">as.numeric</span>(edad),</span>
+<span id="cb18-9"><a href=""></a>    <span class="at">poblacion =</span> <span class="fu">as.numeric</span>(poblacion))</span>
+<span id="cb18-10"><a href=""></a></span>
+<span id="cb18-11"><a href=""></a>whipple <span class="ot">&lt;-</span> edad_simple_1980 <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href=""></a>  <span class="fu">filter</span>(edad <span class="sc">&gt;=</span> <span class="dv">23</span>, edad <span class="sc">&lt;=</span> <span class="dv">62</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-13"><a href=""></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-14"><a href=""></a>    <span class="at">pob_multiplos_5 =</span> <span class="fu">sum</span>(poblacion[edad <span class="sc">%in%</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">60</span>, <span class="at">by =</span> <span class="dv">5</span>)]),</span>
+<span id="cb18-15"><a href=""></a>    <span class="at">pob_total       =</span> <span class="fu">sum</span>(poblacion),</span>
+<span id="cb18-16"><a href=""></a>    <span class="at">indice_whipple  =</span> <span class="fu">round</span>(pob_multiplos_5 <span class="sc">/</span> (pob_total <span class="sc">/</span> <span class="dv">5</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tabla-1" class="slide level2">
+<h2>Tabla</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>tabla_whipple <span class="ot">&lt;-</span> <span class="fu">gt</span>(whipple) <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href=""></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb19-3"><a href=""></a>    <span class="at">title    =</span> <span class="st">"Índice de Whipple"</span>,</span>
+<span id="cb19-4"><a href=""></a>    <span class="at">subtitle =</span> <span class="st">"Argentina. Censo 1980 (población de 23 a 62 años)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb19-5"><a href=""></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb19-6"><a href=""></a>    <span class="at">columns  =</span> <span class="fu">c</span>(pob_multiplos_5, pob_total),</span>
+<span id="cb19-7"><a href=""></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
+<span id="cb19-8"><a href=""></a>    <span class="at">sep_mark =</span> <span class="st">"."</span>,</span>
+<span id="cb19-9"><a href=""></a>    <span class="at">dec_mark =</span> <span class="st">","</span>) <span class="sc">|&gt;</span></span>
+<span id="cb19-10"><a href=""></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb19-11"><a href=""></a>    <span class="at">pob_multiplos_5 =</span> <span class="st">"Población en edades múltiplo de 5"</span>,</span>
+<span id="cb19-12"><a href=""></a>    <span class="at">pob_total       =</span> <span class="st">"Población total (23 a 62 años)"</span>,</span>
+<span id="cb19-13"><a href=""></a>    <span class="at">indice_whipple  =</span> <span class="st">"Índice"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb19-14"><a href=""></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb19-15"><a href=""></a>    <span class="at">source_note =</span> </span>
+<span id="cb19-16"><a href=""></a>      <span class="fu">md</span>(<span class="st">"**Fuente:** elaboración propia en base a datos de INDEC (Censo Nacional de Población 1980). Escala de referencia: &lt;105 muy preciso, 105–124 aceptable, ≥125 deficiente."</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb19-17"><a href=""></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb19-18"><a href=""></a>    <span class="at">table.background.color =</span> <span class="st">"white"</span></span>
+<span id="cb19-19"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>t2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>tabla_whipple</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<div id="acvztqacjs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#acvztqacjs table {
+<div id="ljxmljdevn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ljxmljdevn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#acvztqacjs thead, #acvztqacjs tbody, #acvztqacjs tfoot, #acvztqacjs tr, #acvztqacjs td, #acvztqacjs th {
+#ljxmljdevn thead, #ljxmljdevn tbody, #ljxmljdevn tfoot, #ljxmljdevn tr, #ljxmljdevn td, #ljxmljdevn th {
   border-style: none;
 }
 
-#acvztqacjs p {
+#ljxmljdevn p {
   margin: 0;
   padding: 0;
 }
 
-#acvztqacjs .gt_table {
+#ljxmljdevn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1423,12 +1432,12 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-left-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_caption {
+#ljxmljdevn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#acvztqacjs .gt_title {
+#ljxmljdevn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1440,7 +1449,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-width: 0;
 }
 
-#acvztqacjs .gt_subtitle {
+#ljxmljdevn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1452,7 +1461,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-top-width: 0;
 }
 
-#acvztqacjs .gt_heading {
+#ljxmljdevn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1464,13 +1473,13 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_bottom_border {
+#ljxmljdevn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_col_headings {
+#ljxmljdevn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1485,7 +1494,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_col_heading {
+#ljxmljdevn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1505,7 +1514,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   overflow-x: hidden;
 }
 
-#acvztqacjs .gt_column_spanner_outer {
+#ljxmljdevn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1517,15 +1526,15 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 4px;
 }
 
-#acvztqacjs .gt_column_spanner_outer:first-child {
+#ljxmljdevn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#acvztqacjs .gt_column_spanner_outer:last-child {
+#ljxmljdevn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#acvztqacjs .gt_column_spanner {
+#ljxmljdevn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1537,11 +1546,11 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   width: 100%;
 }
 
-#acvztqacjs .gt_spanner_row {
+#ljxmljdevn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#acvztqacjs .gt_group_heading {
+#ljxmljdevn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1567,7 +1576,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   text-align: left;
 }
 
-#acvztqacjs .gt_empty_group_heading {
+#ljxmljdevn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1582,15 +1591,15 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   vertical-align: middle;
 }
 
-#acvztqacjs .gt_from_md > :first-child {
+#ljxmljdevn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#acvztqacjs .gt_from_md > :last-child {
+#ljxmljdevn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#acvztqacjs .gt_row {
+#ljxmljdevn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1609,7 +1618,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   overflow-x: hidden;
 }
 
-#acvztqacjs .gt_stub {
+#ljxmljdevn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1622,7 +1631,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#acvztqacjs .gt_stub_row_group {
+#ljxmljdevn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1636,15 +1645,15 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   vertical-align: top;
 }
 
-#acvztqacjs .gt_row_group_first td {
+#ljxmljdevn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#acvztqacjs .gt_row_group_first th {
+#ljxmljdevn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#acvztqacjs .gt_summary_row {
+#ljxmljdevn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1654,16 +1663,16 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#acvztqacjs .gt_first_summary_row {
+#ljxmljdevn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_first_summary_row.thick {
+#ljxmljdevn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#acvztqacjs .gt_last_summary_row {
+#ljxmljdevn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1673,7 +1682,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_grand_summary_row {
+#ljxmljdevn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1683,7 +1692,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#acvztqacjs .gt_first_grand_summary_row {
+#ljxmljdevn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1693,7 +1702,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-top-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_last_grand_summary_row_top {
+#ljxmljdevn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1703,11 +1712,11 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_striped {
+#ljxmljdevn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#acvztqacjs .gt_table_body {
+#ljxmljdevn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1716,7 +1725,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-bottom-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_footnotes {
+#ljxmljdevn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1730,7 +1739,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_footnote {
+#ljxmljdevn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1739,7 +1748,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#acvztqacjs .gt_sourcenotes {
+#ljxmljdevn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1753,7 +1762,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   border-right-color: #D3D3D3;
 }
 
-#acvztqacjs .gt_sourcenote {
+#ljxmljdevn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1761,96 +1770,112 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
   padding-right: 5px;
 }
 
-#acvztqacjs .gt_left {
+#ljxmljdevn .gt_left {
   text-align: left;
 }
 
-#acvztqacjs .gt_center {
+#ljxmljdevn .gt_center {
   text-align: center;
 }
 
-#acvztqacjs .gt_right {
+#ljxmljdevn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#acvztqacjs .gt_font_normal {
+#ljxmljdevn .gt_font_normal {
   font-weight: normal;
 }
 
-#acvztqacjs .gt_font_bold {
+#ljxmljdevn .gt_font_bold {
   font-weight: bold;
 }
 
-#acvztqacjs .gt_font_italic {
+#ljxmljdevn .gt_font_italic {
   font-style: italic;
 }
 
-#acvztqacjs .gt_super {
+#ljxmljdevn .gt_super {
   font-size: 65%;
 }
 
-#acvztqacjs .gt_footnote_marks {
+#ljxmljdevn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#acvztqacjs .gt_asterisk {
+#ljxmljdevn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#acvztqacjs .gt_indent_1 {
+#ljxmljdevn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#acvztqacjs .gt_indent_2 {
+#ljxmljdevn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#acvztqacjs .gt_indent_3 {
+#ljxmljdevn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#acvztqacjs .gt_indent_4 {
+#ljxmljdevn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#acvztqacjs .gt_indent_5 {
+#ljxmljdevn .gt_indent_5 {
   text-indent: 25px;
 }
+
+#ljxmljdevn .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ljxmljdevn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="3" class="gt_heading gt_title gt_font_normal" style="">Índice de Whipple</td>
-    </tr>
-    <tr class="gt_heading">
-      <td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Argentina. Censo 1980 (población de 23 a 62 años)</td>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Población en edades múltiplo de 5">Población en edades múltiplo de 5</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Población total (23 a 62 años)">Población total (23 a 62 años)</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Índice">Índice</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="pob_multiplos_5" class="gt_row gt_right">2.801.322</td>
-<td headers="pob_total" class="gt_row gt_right">13.134.697</td>
-<td headers="indice_whipple" class="gt_row gt_right">106.6</td></tr>
-  </tbody>
-  <tfoot class="gt_sourcenotes">
-    <tr>
-      <td class="gt_sourcenote" colspan="3"><strong>Fuente:</strong> elaboración propia en base a datos de INDEC (Censo Nacional de Población 1980). Escala de referencia: &lt;105 muy preciso, 105–124 aceptable, =125 deficiente.</td>
-    </tr>
-  </tfoot>
-  
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="3" class="gt_heading gt_title gt_font_normal">Índice de Whipple</th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Argentina. Censo 1980 (población de 23 a 62 años)</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="pob_multiplos_5" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Población en edades múltiplo de 5</th>
+<th id="pob_total" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Población total (23 a 62 años)</th>
+<th id="indice_whipple" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Índice</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="pob_multiplos_5">2.801.322</td>
+<td class="gt_row gt_right" headers="pob_total">13.134.697</td>
+<td class="gt_row gt_right" headers="indice_whipple">106.6</td>
+</tr>
+</tbody><tfoot>
+<tr class="even gt_sourcenotes">
+<td colspan="3" class="gt_sourcenote"><strong>Fuente:</strong> elaboración propia en base a datos de INDEC (Censo Nacional de Población 1980). Escala de referencia: &lt;105 muy preciso, 105–124 aceptable, ≥125 deficiente.</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
 </div>
-</section></section>
+</section>
+<section id="resultado" class="slide level2">
+<h2>Resultado</h2>
+
+<img data-src="images/procesandor2.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section></section>
 <section id="preguntas" class="title-slide slide level1 center">
 <h1>Preguntas</h1>
 
@@ -1858,9 +1883,11 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
 
 <section id="gracias" class="title-slide slide level1 center">
 <h1>Gracias <span class="emoji" data-emoji="grin">😁</span></h1>
-
-<img src="images/hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<div class="quarto-auto-generated-content">
+<p><img src="images/hex.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://soyandrea.github.io/arcenso/"><strong>ARcenso</strong></a></p>
+</div>
 </div>
 </section>
 
@@ -1891,7 +1918,6 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -2077,42 +2103,80 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -2146,18 +2210,7 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -2189,11 +2242,50 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -2203,8 +2295,17 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -2218,7 +2319,11 @@ Andrea Gomez Vargas &amp; Emanuel Ciardullo
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
