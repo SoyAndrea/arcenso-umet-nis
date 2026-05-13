@@ -3,7 +3,6 @@ title: "De datos censales a análisis demográficos con ARcenso"
 subtitle: "Taller práctico en R"
 author: "Andrea Gomez Vargas & Emanuel Ciardullo"
 institute: "UMET - NIS"
-date: "05/12/2026"
 format:
   revealjs: 
     theme: argento.scss
@@ -214,51 +213,25 @@ library(arcenso)
 
 # Principales funciones
 
-
-## `geo_metadata`
+ `geo_metadata`
 
 > Codigos geograficos estándar de INDEC 
 
-<br>
-
-```{r}
-geo_metadata
-```
-
-## `check_repository()`
+`check_repository()`
 
 > Chequeo de tablas dispónibles por año o temática censal
 
-<br>
-
-```{r}
-check_repository(year = 1970,
-                 geo_code = "00")
-```
-## `arcenso_app()`
-
-> tablero de consulta
-
-```{r eval=FALSE}
-arcenso_app()
-```
-
-![](images/shiny.png){width="120%" fig-align="center"}
-
-
-## `get_census()`
-
+`get_census()`
 
 > Obtener tablas por año o temática censal
 
 <br>
 
-```{r}
-get_census(year = 1970,
-           topic = "estructura",
-           geo_code = "00")
-```
+## `arcenso_app()`
 
+> tablero de consulta
+
+![](images/shiny.png){width="120%" fig-align="center"}
 
 
 ## Documentación
@@ -296,8 +269,7 @@ remotes::install_github("SoyAndrea/arcenso")
 #| echo: true
 #| eval: false
 #| 
-install.packages("tidyverse")
-install.packages("gt")
+install.packages(c("dplyr", "tidyr", "ggplot2", "gt"))
 ```
 
 ## Activación de paquetes con `library`
@@ -340,7 +312,7 @@ pob_1970 <- poblacion_1970 |>
   select(censo, sexo, grupo_edad, poblacion)
 ```
 
-### Censo 1980
+## Censo 1980
 
 ```{r}
 poblacion_1980 <- get_census(id = "1980_00_estructura_03")
@@ -379,6 +351,8 @@ pob_1980 <- poblacion_1980 |>
   select(censo, sexo, grupo_edad, poblacion)
 ```
 
+## Estructura de la población
+
 ```{r}
 poblacion <- bind_rows(pob_1970, pob_1980) |>
   mutate(
@@ -392,17 +366,12 @@ poblacion <- bind_rows(pob_1970, pob_1980) |>
         "50-54", "55-59", "60-64", "65-69", "70-74",
         "75-79", "80-84", "85 y más"))
   )
-```
 
-## Estructura de la población
-
-
-```{r}
 head(poblacion)
 ```
 
 
-### Pirámide poblacional
+## Pirámide poblacional
 
 ```{r}
 piramide <- poblacion |>
@@ -415,9 +384,11 @@ piramide <- poblacion |>
   ungroup()
 ```
 
+##
+
 ```{r}
 # Pirámide comparativa
-piramide |>
+p <- piramide |>
   ggplot(aes(x = poblacion_rel, y = grupo_edad, fill = sexo)) +
   geom_col() +
   facet_wrap(~ censo, ncol = 2) +
@@ -439,8 +410,13 @@ piramide |>
     strip.text = element_text(face = "bold", size = 12) )
 ```
 
+##
 
-### Índice de envejecimiento
+```{r}
+p
+```
+
+## Índice de envejecimiento
 
 ```{r}
 envejecimiento <- poblacion |>
@@ -450,7 +426,8 @@ envejecimiento <- poblacion |>
     poblacion_65ymas = sum(poblacion[grupo_edad %in% c("65-69", "70-74", "75-79", "80-84", "85 y más")]),
     indice = round(poblacion_65ymas / poblacion_0a14 * 100, 0))
 
-gt(envejecimiento) |>
+# Tabla en gt
+t <- gt(envejecimiento) |>
   tab_header(
     title    = "Comparación del índice de envejecimiento",
     subtitle = "Argentina. Años 1970 y 1980"
@@ -478,7 +455,13 @@ gt(envejecimiento) |>
   )
 ```
 
-### Índice de feminidad
+## 
+
+```{r}
+t
+```
+
+## Índice de feminidad
 
 ```{r}
 feminidad <- poblacion |>
@@ -492,9 +475,9 @@ feminidad <- poblacion |>
     indice_feminidad = round(Mujeres / Varones * 100, 0)
   ) |>
   select(-Varones, -Mujeres)
-```
-```{r}
-feminidad |>
+
+# Grafico
+ f <- feminidad |>
   pivot_wider(
     names_from   = censo,
     values_from  = indice_feminidad,
@@ -519,7 +502,13 @@ feminidad |>
   theme_minimal()
 ```
 
-### Índice de Whipple
+## 
+
+```{r}
+f
+```
+
+## Índice de Whipple
 
 ```{r}
 edad_simple_1980 <- get_census(id = "1980_00_estructura_03") |>
@@ -538,10 +527,9 @@ whipple <- edad_simple_1980 |>
     pob_multiplos_5 = sum(poblacion[edad %in% seq(25, 60, by = 5)]),
     pob_total       = sum(poblacion),
     indice_whipple  = round(pob_multiplos_5 / (pob_total / 5) * 100, 1) )
-```
 
-```{r}
-gt(whipple) |>
+# Tabla en gt
+t2 <- gt(whipple) |>
   tab_header(
     title    = "Índice de Whipple",
     subtitle = "Argentina. Censo 1980 (población de 23 a 62 años)") |>
@@ -562,6 +550,10 @@ gt(whipple) |>
   )
 ```
 
+##
+```{r}
+t2
+```
 
 # Preguntas
 
