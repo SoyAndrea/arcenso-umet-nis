@@ -75,6 +75,42 @@ from: markdown+emoji
 
 ![Logos censales de 1970 a 2022](images/censos.png){width="80%" fig-align="center"}
 
+
+## Los censos que vamos a explorar hoy
+
+<br>
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/jqM8nhl_sCE?si=_e5qxuiu6YtpAW-W"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen>
+</iframe>
+
+:::
+
+::: {.column width="50%"}
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/e4Dm5huNG8o?si=nSeG1r4xTXxjSkb9"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen>
+</iframe>
+
+:::
+
+:::
+
+
 ## Proceso de trabajo en ciencia de datos con `R`
 
 
